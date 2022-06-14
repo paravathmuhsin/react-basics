@@ -3,11 +3,13 @@ import ClassComp from "./ClassComp";
 import FuncComp from "./FuncComp";
 import PropsClass from "./PropsClass";
 import PropsFunc from "./PropsFunc";
+import State from "./State";
 
 function App() {
   return (
     <div style={{ textAlign: "center" }}>
       <h3>Welcome so my first app</h3>
+      <State />
       <PropsFunc name="Yadhu" age={23}>
         Hi....
       </PropsFunc>
