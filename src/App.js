@@ -1,4 +1,5 @@
 import React from "react";
+import Ref from "./Ref";
 import ClassComp from "./ClassComp";
 import EventClass from "./EventClass";
 import Events from "./Events";
@@ -12,7 +13,8 @@ function App() {
   return (
     <div style={{ textAlign: "center" }}>
       <h3>Welcome so my first App</h3>
-      <LifeCycle />
+      <Ref />
+      {/* <LifeCycle /> */}
       <EventClass />
       {/* <Events /> */}
       <State />
