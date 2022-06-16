@@ -3,6 +3,7 @@ import ClassComp from "./ClassComp";
 import EventClass from "./EventClass";
 import Events from "./Events";
 import FuncComp from "./FuncComp";
+import LifeCycle from "./LifeCycle";
 import PropsClass from "./PropsClass";
 import PropsFunc from "./PropsFunc";
 import State from "./State";
@@ -10,7 +11,8 @@ import State from "./State";
 function App() {
   return (
     <div style={{ textAlign: "center" }}>
-      <h3>Welcome so my first app</h3>
+      <h3>Welcome so my first App</h3>
+      <LifeCycle />
       <EventClass />
       {/* <Events /> */}
       <State />
