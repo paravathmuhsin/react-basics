@@ -9,11 +9,13 @@ import PropsClass from "./PropsClass";
 import PropsFunc from "./PropsFunc";
 import State from "./State";
 import Loop from "./Loop";
+import HOC from "./HOC";
 
 function App() {
   return (
     <div style={{ textAlign: "center" }}>
       <h3>Welcome so my first App</h3>
+      <HOC name="Muhsin" />
       <Loop />
       <Ref />
       {/* <LifeCycle /> */}
