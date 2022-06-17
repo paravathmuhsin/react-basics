@@ -10,9 +10,9 @@ export class Ref extends Component {
   render() {
     return (
       <div>
-        <p >Ref</p>
-        <Events ref={this.lifeRef}  />
-        <LifeCycle  />
+        <p>Ref</p>
+        <Events />
+        <LifeCycle ref={this.lifeRef} />
       </div>
     );
   }

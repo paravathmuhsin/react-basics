@@ -8,11 +8,13 @@ import LifeCycle from "./LifeCycle";
 import PropsClass from "./PropsClass";
 import PropsFunc from "./PropsFunc";
 import State from "./State";
+import Loop from "./Loop";
 
 function App() {
   return (
     <div style={{ textAlign: "center" }}>
       <h3>Welcome so my first App</h3>
+      <Loop />
       <Ref />
       {/* <LifeCycle /> */}
       <EventClass />
