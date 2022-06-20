@@ -10,11 +10,15 @@ import PropsFunc from "./PropsFunc";
 import State from "./State";
 import Loop from "./Loop";
 import HOC from "./HOC";
+import FormControl from "./FormControl";
+import FormUncontrol from "./FormUncontrol";
 
 function App() {
   return (
     <div style={{ textAlign: "center" }}>
       <h3>Welcome so my first App</h3>
+      <FormUncontrol />
+      <FormControl />
       <HOC name="Muhsin" />
       <Loop />
       <Ref />
