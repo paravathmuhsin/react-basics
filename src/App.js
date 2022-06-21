@@ -12,11 +12,15 @@ import Loop from "./Loop";
 import HOC from "./HOC";
 import FormControl from "./FormControl";
 import FormUncontrol from "./FormUncontrol";
+import StateHooks from "./StateHooks";
+import Effect from "./Effect";
 
 function App() {
   return (
     <div style={{ textAlign: "center" }}>
       <h3>Welcome so my first App</h3>
+      <Effect />
+      <StateHooks />
       <FormUncontrol />
       <FormControl />
       <HOC name="Muhsin" />
