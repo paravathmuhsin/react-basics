@@ -1,7 +1,9 @@
 import React from "react";
+import { useParams } from "react-router-dom";
 import ProductItem from "./ProductItem";
 
 const Loop = () => {
+  let params = useParams();
   const shoes = [
     {
       id: 1,
@@ -17,7 +19,7 @@ const Loop = () => {
     shoes.map((value) => <ProductItem item={value} key={value.id} />);
   return (
     <div>
-      Loop
+      Loop - {params.id}
       {getProducts()}
     </div>
   );
