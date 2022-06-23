@@ -1,15 +1,21 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate, useSearchParams } from "react-router-dom";
 
 const Effect = () => {
   const [state, setState] = useState({ name: "Muhsin" });
   const [address, setAddress] = useState({ state: "kerala" });
+  let [searchParams, setSearchParams] = useSearchParams();
+  let navigate = useNavigate();
 
+  console.log(searchParams.get("name"));
   const clickHandler = () => {
+    setSearchParams({ name: "Sourav", age: 55 });
     setState({ name: "Aruna" });
   };
 
   const clickHandler2 = () => {
     setAddress({ state: "TN" });
+    navigate('/form')
   };
 
   useEffect(() => {
