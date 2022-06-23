@@ -17,29 +17,31 @@ import Effect from "./Effect";
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import FormParent from "./FormParent";
 import NotFound from "./NotFound";
+import ContextComp from "./ContextComp";
 
 function App() {
   return (
     <BrowserRouter>
-      <nav>
-        <Link to="/">Home</Link> |
-        <Link to="effect?name=muhsin">Effect</Link> |{" "}
-        <Link to="form">form </Link> |{" "}
-        <Link to="form/control">form control</Link> |{" "}
-        <Link to="form/uncontrol">form uncontrol</Link> |{" "}
-        <Link to="user/1">user 1</Link> | <Link to="user/2">user 2</Link> |{" "}
-      </nav>
-      <Routes>
-        <Route path="/" element={<StateHooks />} />
-        <Route path="/effect" element={<Effect />} />
-        <Route path="/form" element={<FormParent />}>
-          <Route index element={<h4>Welcome to form</h4>} />
-          <Route path="control" element={<FormControl />} />
-          <Route path="uncontrol" element={<FormUncontrol />} />
-        </Route>
-        <Route path="/user/:id" element={<Loop />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+      <ContextComp>
+        <nav>
+          <Link to="/">Home</Link> |<Link to="effect?name=muhsin">Effect</Link>{" "}
+          | <Link to="form">form </Link> |{" "}
+          <Link to="form/control">form control</Link> |{" "}
+          <Link to="form/uncontrol">form uncontrol</Link> |{" "}
+          <Link to="user/1">user 1</Link> | <Link to="user/2">user 2</Link> |{" "}
+        </nav>
+        <Routes>
+          <Route path="/" element={<StateHooks />} />
+          <Route path="/effect" element={<Effect />} />
+          <Route path="/form" element={<FormParent />}>
+            <Route index element={<h4>Welcome to form</h4>} />
+            <Route path="control" element={<FormControl />} />
+            <Route path="uncontrol" element={<FormUncontrol />} />
+          </Route>
+          <Route path="/user/:id" element={<Loop />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </ContextComp>
     </BrowserRouter>
     // <div style={{ textAlign: "center" }}>
     //   <h3>Welcome so my first App</h3>
