@@ -18,6 +18,8 @@ import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import FormParent from "./FormParent";
 import NotFound from "./NotFound";
 import ContextComp from "./ContextComp";
+import ContextClass from "./ContextClass";
+import ContextFunc from "./ContextFunc";
 
 function App() {
   return (
@@ -26,6 +28,8 @@ function App() {
         <nav>
           <Link to="/">Home</Link> |<Link to="effect?name=muhsin">Effect</Link>{" "}
           | <Link to="form">form </Link> |{" "}
+          <Link to="context/class">context class</Link> |{" "}
+          <Link to="context/func">context function</Link> |{" "}
           <Link to="form/control">form control</Link> |{" "}
           <Link to="form/uncontrol">form uncontrol</Link> |{" "}
           <Link to="user/1">user 1</Link> | <Link to="user/2">user 2</Link> |{" "}
@@ -39,6 +43,8 @@ function App() {
             <Route path="uncontrol" element={<FormUncontrol />} />
           </Route>
           <Route path="/user/:id" element={<Loop />} />
+          <Route path="/context/class" element={<ContextClass />} />
+          <Route path="/context/func" element={<ContextFunc />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </ContextComp>
