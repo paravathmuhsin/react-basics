@@ -1,4 +1,5 @@
-import React from "react";
+import React, { Suspense } from "react";
+import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import Ref from "./Ref";
 import ClassComp from "./ClassComp";
 import EventClass from "./EventClass";
@@ -8,18 +9,18 @@ import LifeCycle from "./LifeCycle";
 import PropsClass from "./PropsClass";
 import PropsFunc from "./PropsFunc";
 import State from "./State";
-import Loop from "./Loop";
 import HOC from "./HOC";
-import FormControl from "./FormControl";
-import FormUncontrol from "./FormUncontrol";
-import StateHooks from "./StateHooks";
-import Effect from "./Effect";
-import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
-import FormParent from "./FormParent";
-import NotFound from "./NotFound";
-import ContextComp from "./ContextComp";
-import ContextClass from "./ContextClass";
-import ContextFunc from "./ContextFunc";
+
+const Loop = React.lazy(() => import("./Loop"));
+const FormControl = React.lazy(() => import("./FormControl"));
+const FormUncontrol = React.lazy(() => import("./FormUncontrol"));
+const ContextFunc = React.lazy(() => import("./ContextFunc"));
+const ContextClass = React.lazy(() => import("./ContextClass"));
+const ContextComp = React.lazy(() => import("./ContextComp"));
+const NotFound = React.lazy(() => import("./NotFound"));
+const FormParent = React.lazy(() => import("./FormParent"));
+const Effect = React.lazy(() => import("./Effect"));
+const StateHooks = React.lazy(() => import("./StateHooks"));
 
 function App() {
   return (
@@ -34,19 +35,21 @@ function App() {
           <Link to="form/uncontrol">form uncontrol</Link> |{" "}
           <Link to="user/1">user 1</Link> | <Link to="user/2">user 2</Link> |{" "}
         </nav>
-        <Routes>
-          <Route path="/" element={<StateHooks />} />
-          <Route path="/effect" element={<Effect />} />
-          <Route path="/form" element={<FormParent />}>
-            <Route index element={<h4>Welcome to form</h4>} />
-            <Route path="control" element={<FormControl />} />
-            <Route path="uncontrol" element={<FormUncontrol />} />
-          </Route>
-          <Route path="/user/:id" element={<Loop />} />
-          <Route path="/context/class" element={<ContextClass />} />
-          <Route path="/context/func" element={<ContextFunc />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Routes>
+            <Route path="/" element={<StateHooks />} />
+            <Route path="/effect" element={<Effect />} />
+            <Route path="/form" element={<FormParent />}>
+              <Route index element={<h4>Welcome to form</h4>} />
+              <Route path="control" element={<FormControl />} />
+              <Route path="uncontrol" element={<FormUncontrol />} />
+            </Route>
+            <Route path="/user/:id" element={<Loop />} />
+            <Route path="/context/class" element={<ContextClass />} />
+            <Route path="/context/func" element={<ContextFunc />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Suspense>
       </ContextComp>
     </BrowserRouter>
     // <div style={{ textAlign: "center" }}>
