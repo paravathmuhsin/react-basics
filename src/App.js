@@ -21,6 +21,7 @@ const NotFound = React.lazy(() => import("./NotFound"));
 const FormParent = React.lazy(() => import("./FormParent"));
 const Effect = React.lazy(() => import("./Effect"));
 const StateHooks = React.lazy(() => import("./StateHooks"));
+const API = React.lazy(() => import("./API"));
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         <nav>
           <Link to="/">Home</Link> |<Link to="effect?name=muhsin">Effect</Link>{" "}
           | <Link to="form">form </Link> |{" "}
+          <Link to="api">API</Link> |{" "}
           <Link to="context/class">context class</Link> |{" "}
           <Link to="context/func">context function</Link> |{" "}
           <Link to="form/control">form control</Link> |{" "}
@@ -39,6 +41,7 @@ function App() {
           <Routes>
             <Route path="/" element={<StateHooks />} />
             <Route path="/effect" element={<Effect />} />
+            <Route path="/api" element={<API />} />
             <Route path="/form" element={<FormParent />}>
               <Route index element={<h4>Welcome to form</h4>} />
               <Route path="control" element={<FormControl />} />
