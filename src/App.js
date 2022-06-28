@@ -5,7 +5,6 @@ import ClassComp from "./ClassComp";
 import EventClass from "./EventClass";
 import Events from "./Events";
 import FuncComp from "./FuncComp";
-import LifeCycle from "./LifeCycle";
 import PropsClass from "./PropsClass";
 import PropsFunc from "./PropsFunc";
 import State from "./State";
@@ -22,6 +21,7 @@ const FormParent = React.lazy(() => import("./FormParent"));
 const Effect = React.lazy(() => import("./Effect"));
 const StateHooks = React.lazy(() => import("./StateHooks"));
 const API = React.lazy(() => import("./API"));
+const LifeCycle = React.lazy(() => import("./LifeCycle"));
 
 function App() {
   return (
@@ -35,6 +35,7 @@ function App() {
           <Link to="context/func">context function</Link> |{" "}
           <Link to="form/control">form control</Link> |{" "}
           <Link to="form/uncontrol">form uncontrol</Link> |{" "}
+          <Link to="life-cycle">Life cycle</Link> |{" "}
           <Link to="user/1">user 1</Link> | <Link to="user/2">user 2</Link> |{" "}
         </nav>
         <Suspense fallback={<div>Loading...</div>}>
@@ -42,6 +43,7 @@ function App() {
             <Route path="/" element={<StateHooks />} />
             <Route path="/effect" element={<Effect />} />
             <Route path="/api" element={<API />} />
+            <Route path="/life-cycle" element={<LifeCycle />} />
             <Route path="/form" element={<FormParent />}>
               <Route index element={<h4>Welcome to form</h4>} />
               <Route path="control" element={<FormControl />} />
