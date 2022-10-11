@@ -1,6 +1,7 @@
 import "./App.css";
 import Event from "./Event";
 import First from "./First";
+import LifeCycle from "./LifeCycle";
 import PropClass from "./PropClass";
 import PropFun from "./PropFun";
 import Second from "./Second";
@@ -11,6 +12,7 @@ function App() {
   return (
     <div className="App">
       <h1>Welcome to our first app</h1>
+      <LifeCycle />
       <Event />
       <State />
       <PropFun country="india" state="bihar" />
