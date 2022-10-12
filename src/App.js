@@ -1,6 +1,7 @@
 import "./App.css";
 import Event from "./Event";
 import First from "./First";
+import KeyProp from "./KeyProp";
 import LifeCycle from "./LifeCycle";
 import PropClass from "./PropClass";
 import PropFun from "./PropFun";
@@ -13,6 +14,7 @@ function App() {
   return (
     <div className="App">
       <h1>Welcome to our first app</h1>
+      <KeyProp />
       <Ref />
       {/* <LifeCycle /> */}
       <Event />
