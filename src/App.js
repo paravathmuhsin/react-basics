@@ -1,6 +1,7 @@
 import "./App.css";
 import Event from "./Event";
 import First from "./First";
+import HOC from "./HOC";
 import KeyProp from "./KeyProp";
 import LifeCycle from "./LifeCycle";
 import PropClass from "./PropClass";
@@ -14,6 +15,7 @@ function App() {
   return (
     <div className="App">
       <h1>Welcome to our first app</h1>
+      <HOC name="teenu" age={6} />
       <KeyProp />
       <Ref />
       {/* <LifeCycle /> */}
