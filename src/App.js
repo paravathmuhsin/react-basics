@@ -1,6 +1,7 @@
 import "./App.css";
 import Event from "./Event";
 import First from "./First";
+import FormControl from "./FormControl";
 import HOC from "./HOC";
 import KeyProp from "./KeyProp";
 import LifeCycle from "./LifeCycle";
@@ -15,6 +16,7 @@ function App() {
   return (
     <div className="App">
       <h1>Welcome to our first app</h1>
+      <FormControl />
       <HOC name="teenu" age={6} />
       <KeyProp />
       <Ref />
