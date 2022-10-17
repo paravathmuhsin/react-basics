@@ -11,12 +11,16 @@ import PropFun from "./PropFun";
 import Ref from "./Ref";
 import Second from "./Second";
 import State from "./State";
+import UseEffet from "./UseEffet";
+import UseState from "./UseState";
 
 function App() {
   const name = "Siva";
   return (
     <div className="App">
       <h1>Welcome to our first app</h1>
+      <UseEffet />
+      <UseState />
       <FormUncontrolled />
       <FormControl />
       <HOC name="teenu" age={6} />
