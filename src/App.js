@@ -6,6 +6,7 @@ import FormUncontrolled from "./FormUncontrolled";
 import HOC from "./HOC";
 import KeyProp from "./KeyProp";
 import LifeCycle from "./LifeCycle";
+import MemoParent from "./MemoParent";
 import PropClass from "./PropClass";
 import PropFun from "./PropFun";
 import Ref from "./Ref";
@@ -19,6 +20,7 @@ function App() {
   return (
     <div className="App">
       <h1>Welcome to our first app</h1>
+      <MemoParent />
       <UseEffet />
       <UseState />
       <FormUncontrolled />
