@@ -1,3 +1,4 @@
+import UseCallback from "./UseCallback";
 import "./App.css";
 import Event from "./Event";
 import First from "./First";
@@ -14,12 +15,15 @@ import Second from "./Second";
 import State from "./State";
 import UseEffet from "./UseEffet";
 import UseState from "./UseState";
+import UseMemo from "./UseMemo";
 
 function App() {
   const name = "Siva";
   return (
     <div className="App">
       <h1>Welcome to our first app</h1>
+      <UseMemo />
+      <UseCallback />
       <MemoParent />
       <UseEffet />
       <UseState />
