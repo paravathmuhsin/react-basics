@@ -16,12 +16,16 @@ import State from "./State";
 import UseEffet from "./UseEffet";
 import UseState from "./UseState";
 import UseMemo from "./UseMemo";
+import ContextClass from "./ContextClass";
+import ContextFun from "./ContextFun";
 
 function App() {
   const name = "Siva";
   return (
     <div className="App">
       <h1>Welcome to our first app</h1>
+      <ContextFun />
+      <ContextClass />
       <UseMemo />
       <UseCallback />
       <MemoParent />
