@@ -18,12 +18,16 @@ import UseState from "./UseState";
 import UseMemo from "./UseMemo";
 import ContextClass from "./ContextClass";
 import ContextFun from "./ContextFun";
+import Ajax from "./Ajax";
+import Axios from "./Axios";
 
 function App() {
   const name = "Siva";
   return (
     <div className="App">
       <h1>Welcome to our first app</h1>
+      <Axios />
+      {/* <Ajax /> */}
       <ContextFun />
       <ContextClass />
       <UseMemo />
