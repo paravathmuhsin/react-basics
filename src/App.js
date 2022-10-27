@@ -29,40 +29,47 @@ import {
 import ErrorPage from "./ErrorPage";
 import FormParent from "./FormParent";
 import Redirect from "./Redirect";
+import Header from "./Header";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <State />,
+    element: <Header />,
     errorElement: <ErrorPage />,
-  },
-  {
-    path: "/event",
-    element: <Event />,
-  },
-  {
-    path: "/effect/:value",
-    element: <UseEffet />,
-  },
-  {
-    path: "/form",
-    element: <FormParent />,
     children: [
       {
-        index: true,
-        element: <h3>Welcome to form</h3>,
+        path: "/",
+        element: <State />,
       },
       {
-        path: "controlled",
-        element: <FormControl />,
+        path: "/event",
+        element: <Event />,
       },
       {
-        path: "uncontrolled",
-        element: <FormUncontrolled />,
+        path: "/effect/:value",
+        element: <UseEffet />,
       },
       {
-        path: "redirect",
-        element: <Redirect />,
+        path: "/form",
+        element: <FormParent />,
+        children: [
+          {
+            index: true,
+            element: <h3>Welcome to form</h3>,
+          },
+          {
+            path: "controlled",
+            element: <FormControl />,
+          },
+          {
+            path: "uncontrolled",
+            element: <FormUncontrolled />,
+          },
+          {
+            path: "redirect",
+            element: <Redirect />,
+          },
+        ],
       },
     ],
   },
