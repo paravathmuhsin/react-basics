@@ -1,9 +1,7 @@
+import React, { Suspense } from "react";
 import UseCallback from "./UseCallback";
 import "./App.css";
-import Event from "./Event";
 import First from "./First";
-import FormControl from "./FormControl";
-import FormUncontrolled from "./FormUncontrolled";
 import HOC from "./HOC";
 import KeyProp from "./KeyProp";
 import LifeCycle from "./LifeCycle";
@@ -12,8 +10,6 @@ import PropClass from "./PropClass";
 import PropFun from "./PropFun";
 import Ref from "./Ref";
 import Second from "./Second";
-import State from "./State";
-import UseEffet from "./UseEffet";
 import UseState from "./UseState";
 import UseMemo from "./UseMemo";
 import ContextClass from "./ContextClass";
@@ -26,10 +22,16 @@ import {
   Outlet,
   RouterProvider,
 } from "react-router-dom";
-import ErrorPage from "./ErrorPage";
-import FormParent from "./FormParent";
-import Redirect from "./Redirect";
-import Header from "./Header";
+
+const Header = React.lazy(() => import("./Header"));
+const State = React.lazy(() => import("./State"));
+const ErrorPage = React.lazy(() => import("./ErrorPage"));
+const Event = React.lazy(() => import("./Event"));
+const UseEffet = React.lazy(() => import("./UseEffet"));
+const FormParent = React.lazy(() => import("./FormParent"));
+const FormControl = React.lazy(() => import("./FormControl"));
+const FormUncontrolled = React.lazy(() => import("./FormUncontrolled"));
+const Redirect = React.lazy(() => import("./Redirect"));
 
 const router = createBrowserRouter([
   {
@@ -79,7 +81,9 @@ function App() {
   // const name = "Siva";
   return (
     <div className="App">
-      <RouterProvider router={router} fallbackElement={<h4>Loading....</h4>} />
+      <Suspense fallback={<div>Loading...</div>}>
+        <RouterProvider router={router} />
+      </Suspense>
     </div>
     //   <h1>Welcome to our first app</h1>
     //   <Axios />
