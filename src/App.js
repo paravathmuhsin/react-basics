@@ -20,9 +20,15 @@ import ContextClass from "./ContextClass";
 import ContextFun from "./ContextFun";
 import Ajax from "./Ajax";
 import Axios from "./Axios";
-import { createBrowserRouter, Link, Outlet, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  Link,
+  Outlet,
+  RouterProvider,
+} from "react-router-dom";
 import ErrorPage from "./ErrorPage";
 import FormParent from "./FormParent";
+import Redirect from "./Redirect";
 
 const router = createBrowserRouter([
   {
@@ -43,7 +49,7 @@ const router = createBrowserRouter([
     element: <FormParent />,
     children: [
       {
-        path: "",
+        index: true,
         element: <h3>Welcome to form</h3>,
       },
       {
@@ -54,6 +60,10 @@ const router = createBrowserRouter([
         path: "uncontrolled",
         element: <FormUncontrolled />,
       },
+      {
+        path: "redirect",
+        element: <Redirect />,
+      },
     ],
   },
 ]);
@@ -62,7 +72,7 @@ function App() {
   // const name = "Siva";
   return (
     <div className="App">
-      <RouterProvider router={router} />
+      <RouterProvider router={router} fallbackElement={<h4>Loading....</h4>} />
     </div>
     //   <h1>Welcome to our first app</h1>
     //   <Axios />
