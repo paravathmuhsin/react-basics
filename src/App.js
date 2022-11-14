@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import State from "./State";
 import FunComp from "./FunComp";
 import PropClass from "./PropClass";
 import PropFun from "./PropFun";
@@ -8,6 +9,7 @@ class App extends Component {
     return (
       <>
         <h1>Welcome to my first app</h1>
+        <State />
         <PropClass country={country}>
           <p>Hello</p>
         </PropClass>
@@ -18,3 +20,4 @@ class App extends Component {
   }
 }
 export default App;
+  
