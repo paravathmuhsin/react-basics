@@ -5,22 +5,25 @@ import PropClass from "./PropClass";
 import PropFun from "./PropFun";
 import Event from "./Event";
 import LifeCycle from "./LifeCycle";
+import Ref from "./Ref";
 class App extends Component {
   render() {
     const country = "India";
     return (
       <>
         <h1>Welcome to my first app</h1>
+        <Ref />
         <LifeCycle />
-        {/* <Event />
+        <Event />
         <State />
         <PropClass country={country}>
           <p>Hello</p>
         </PropClass>
         <PropFun name="Muhsin" age={44} />
-        <FunComp /> */}
+        <FunComp />
       </>
     );
   }
 }
 export default App;
+
