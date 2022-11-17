@@ -6,12 +6,14 @@ import PropFun from "./PropFun";
 import Event from "./Event";
 import LifeCycle from "./LifeCycle";
 import Ref from "./Ref";
+import Loop from "./Loop";
 class App extends Component {
   render() {
     const country = "India";
     return (
       <>
         <h1>Welcome to my first app</h1>
+        <Loop />
         <Ref />
         <LifeCycle />
         <Event />

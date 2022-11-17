@@ -11,8 +11,8 @@ export default class Ref extends Component {
     return (
       <div>
         Ref
-        <p>This is sample paragraph</p>
-        <FunComp ref={this.paraRef} />
+        <p ref={this.paraRef}>This is sample paragraph</p>
+        <FunComp  />
       </div>
     );
   }
