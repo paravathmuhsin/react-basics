@@ -10,12 +10,14 @@ import Loop from "./Loop";
 import HOC from "./HOC";
 import FormControl from "./FormControl";
 import FormUncontrol from "./FormUncontrol";
+import StateHook from "./StateHook";
 class App extends Component {
   render() {
     const country = "India";
     return (
       <>
         <h1>Welcome to my first app</h1>
+        <StateHook />
         <FormUncontrol />
         <FormControl />
         <HOC country="IND" />
