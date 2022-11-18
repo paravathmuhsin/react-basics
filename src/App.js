@@ -8,12 +8,16 @@ import LifeCycle from "./LifeCycle";
 import Ref from "./Ref";
 import Loop from "./Loop";
 import HOC from "./HOC";
+import FormControl from "./FormControl";
+import FormUncontrol from "./FormUncontrol";
 class App extends Component {
   render() {
     const country = "India";
     return (
       <>
         <h1>Welcome to my first app</h1>
+        <FormUncontrol />
+        <FormControl />
         <HOC country="IND" />
         <Loop />
         <Ref />
