@@ -12,12 +12,14 @@ import FormControl from "./FormControl";
 import FormUncontrol from "./FormUncontrol";
 import StateHook from "./StateHook";
 import Effect from "./Effect";
+import UseRef from "./UseRef";
 class App extends Component {
   render() {
     const country = "India";
     return (
       <>
         <h1>Welcome to my first app</h1>
+        <UseRef />
         <Effect />
         <StateHook />
         <FormUncontrol />
