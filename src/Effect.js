@@ -1,9 +1,19 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import Memo from "./Memo";
 
+function add(a, b) {
+  return a + b;
+}
+
 const Effect = () => {
-  const [first, setfirst] = useState("hii");
+  const [first, setfirst] = useState(2);
   const [sec, setsec] = useState("hii");
+  //ijfhe9gh89ehg89e
+  const ss = useCallback(() => {
+    console.log("ss", first);
+  }, [first]);
+  const dd = useMemo(() => add(3, first), [first]);
+
   useEffect(() => {
     console.log("useEffect - first");
     return () => {};
@@ -13,11 +23,11 @@ const Effect = () => {
   }, [sec]);
   return (
     <div>
-      Effect
-      <Memo ss={sec} />
+      Effect - {dd}
+      <Memo ff={dd} />
       <button
         onClick={() => {
-          setfirst("Hello");
+          setfirst(5);
         }}
       >
         {first}
