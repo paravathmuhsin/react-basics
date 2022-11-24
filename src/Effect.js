@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useMemo, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import Memo from "./Memo";
 
 function add(a, b) {
@@ -6,6 +7,8 @@ function add(a, b) {
 }
 
 const Effect = () => {
+  const [searchParams, setSearchParams] = useSearchParams();
+  console.log( searchParams.get("name"))
   const [first, setfirst] = useState(2);
   const [sec, setsec] = useState("hii");
   //ijfhe9gh89ehg89e
