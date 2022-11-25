@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useParams } from "react-router-dom";
+import { ThemeContext } from "./App";
 
 const FunComp = () => {
+  const context = useContext(ThemeContext);
   const { value } = useParams();
   const name = [4, 7];
   const className = "test";
@@ -10,7 +12,7 @@ const FunComp = () => {
   };
   return (
     <h2 className={className}>
-      This is fom functional component - {getName()} - {value}
+      This is fom functional component - {getName()} - {value} - {context}
     </h2>
   );
 };

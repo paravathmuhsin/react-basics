@@ -1,4 +1,4 @@
-import React, { Component, Suspense } from "react";
+import React, { Component, createContext, Suspense } from "react";
 // import State from "./State";
 // import PropClass from "./PropClass";
 // import PropFun from "./PropFun";
@@ -18,6 +18,9 @@ const UseRef = React.lazy(() => import("./UseRef"));
 const Event = React.lazy(() => import("./Event"));
 const Loop = React.lazy(() => import("./Loop"));
 const FunComp = React.lazy(() => import("./FunComp"));
+
+export const ThemeContext = createContext(null);
+
 class App extends Component {
   router = createBrowserRouter([
     {
@@ -65,9 +68,11 @@ class App extends Component {
   render() {
     const country = "India";
     return (
-      <Suspense fallback={<h3>Loading....</h3>}>
-        <RouterProvider router={this.router} />
-      </Suspense>
+      <ThemeContext.Provider value="dark">
+        <Suspense fallback={<h3>Loading....</h3>}>
+          <RouterProvider router={this.router} />
+        </Suspense>
+      </ThemeContext.Provider>
       // <>
       //   <h1>Welcome to my first app</h1>
       //   <UseRef />

@@ -1,10 +1,12 @@
 import React, { Component } from "react";
+import { ThemeContext } from "./App";
 
-export default class Event extends Component {
+class Event extends Component {
   constructor() {
     super();
     this.clickHandler = this.clickHandler.bind(this);
   }
+  // static contextType = ThemeContext;
   user = {
     name: "Muhsin",
   };
@@ -20,7 +22,7 @@ export default class Event extends Component {
   render() {
     return (
       <div>
-        Event
+        Event - {this.context}
         <input type="text" onChange={this.onChangeHandler} />
         <button
           onClick={(e) => {
@@ -33,4 +35,6 @@ export default class Event extends Component {
     );
   }
 }
+Event.contextType = ThemeContext;
+export default Event;
 //
