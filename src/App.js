@@ -1,26 +1,27 @@
-import React, { Children, Component } from "react";
-import State from "./State";
-import FunComp from "./FunComp";
-import PropClass from "./PropClass";
-import PropFun from "./PropFun";
-import Event from "./Event";
-import LifeCycle from "./LifeCycle";
-import Ref from "./Ref";
-import Loop from "./Loop";
-import HOC from "./HOC";
-import FormControl from "./FormControl";
-import FormUncontrol from "./FormUncontrol";
-import StateHook from "./StateHook";
-import Effect from "./Effect";
-import UseRef from "./UseRef";
+import React, { Component, Suspense } from "react";
+// import State from "./State";
+// import PropClass from "./PropClass";
+// import PropFun from "./PropFun";
+// import LifeCycle from "./LifeCycle";
+// import Ref from "./Ref";
+// import HOC from "./HOC";
+// import FormControl from "./FormControl";
+// import FormUncontrol from "./FormUncontrol";
+// import StateHook from "./StateHook";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import GreenHeader from "./GreenHeader";
-import Header from "./Header";
-import Nav from "./Nav";
+
+const Effect = React.lazy(() => import("./Effect"));
+const Header = React.lazy(() => import("./Header"));
+const Nav = React.lazy(() => import("./Nav"));
+const GreenHeader = React.lazy(() => import("./GreenHeader"));
+const UseRef = React.lazy(() => import("./UseRef"));
+const Event = React.lazy(() => import("./Event"));
+const Loop = React.lazy(() => import("./Loop"));
+const FunComp = React.lazy(() => import("./FunComp"));
 class App extends Component {
   router = createBrowserRouter([
     {
-      path:"/",
+      path: "/",
       element: <Header />,
       errorElement: <h2>404- Not found</h2>,
       children: [
@@ -58,13 +59,15 @@ class App extends Component {
             },
           ],
         },
-      ]
-    }
+      ],
+    },
   ]);
   render() {
     const country = "India";
     return (
-      <RouterProvider router={this.router} />
+      <Suspense fallback={<h3>Loading....</h3>}>
+        <RouterProvider router={this.router} />
+      </Suspense>
       // <>
       //   <h1>Welcome to my first app</h1>
       //   <UseRef />
