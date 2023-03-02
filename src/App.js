@@ -1,7 +1,14 @@
-import React from "react";
-class App extends React.Component {
+import React, { Component } from "react";
+import First from "./First";
+class App extends Component {
   render() {
-    return <h2>Hiiii</h2>;
+    return (
+      // fragment
+      <>
+        <h2 id="dd">Hiiiiii</h2>
+        <First name="muhsin" age={88}>Helllo</First>
+      </>
+    );
   }
 }
 
