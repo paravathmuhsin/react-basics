@@ -1,13 +1,19 @@
 import React, { Component } from "react";
+import EventClass from "./EventClass";
 import First from "./First";
+import State from "./State";
+import "./style.css";
 class App extends Component {
   render() {
     return (
       // fragment
-      <>
-        <h2 id="dd">Hiiiiii</h2>
-        <First name="muhsin" age={88}>Helllo</First>
-      </>
+      <div className="App">
+        <EventClass />
+        <State />
+        <First name="muhsin" age={88}>
+          Helllo
+        </First>
+      </div>
     );
   }
 }
