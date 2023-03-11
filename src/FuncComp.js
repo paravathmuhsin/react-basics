@@ -1,7 +1,8 @@
 import React from "react";
 
-const FuncComp = ({ country, children }) => {
-  // console.log(props);
+const FuncComp = ({ country, ss, children }) => {
+  // console.log(ss);
+  ss(5656957967);
   // const { country, children } = props;
   return (
     <div>

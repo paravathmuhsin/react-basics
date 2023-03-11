@@ -20,7 +20,7 @@ export default class State extends Component {
   };
 
   render() {
-    console.log("rendered");
+    // console.log("rendered");
     return (
       <div>
         State - {this.state.count} {this.state.name} - {this.test.name}
