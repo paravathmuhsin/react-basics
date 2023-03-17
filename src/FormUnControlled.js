@@ -1,17 +1,21 @@
-import React, { Component } from "react";
+import React, { Component, createRef } from "react";
 
 export default class FormUnControlled extends Component {
+  userRef = createRef();
+  passRef = createRef();
   submitHandler = (e) => {
     e.preventDefault();
+    console.log(this.userRef.current.value);
+    console.log(this.passRef.current.value);
   };
   render() {
     return (
       <div>
         FormUnControlled
         <form onSubmit={this.submitHandler}>
-          username: <input type="text" name="username" />
+          username: <input ref={this.userRef} type="text" name="username" />
           <br />
-          password: <input type="password" name="password" />
+          password: <input ref={this.passRef} type="password" name="password" />
           <br />
           <button type="submit">Login</button>
         </form>
