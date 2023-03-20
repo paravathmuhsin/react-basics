@@ -11,7 +11,9 @@ import Memo from "./Memo";
 import Ref from "./Ref";
 import State from "./State";
 import "./style.css";
+import UseCallBack from "./UseCallBack";
 import UseEffect from "./UseEffect";
+import UseMemo from "./UseMemo";
 import UseRef from "./UseRef";
 import UseState from "./UseState";
 class App extends Component {
@@ -22,6 +24,8 @@ class App extends Component {
     return (
       // fragment
       <div className="App">
+        <UseCallBack />
+        <UseMemo />
         <Memo />
         <UseRef />
         <button
