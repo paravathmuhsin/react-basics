@@ -1,5 +1,6 @@
-import React, { Component, Suspense } from "react";
+import React, { createContext, Suspense } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Context from "./Context";
 // import Event from "./Event";
 // import EventClass from "./EventClass";
 // import First from "./First";
@@ -29,6 +30,7 @@ const FormParent = React.lazy(() => import("./FormParent"));
 const Loop = React.lazy(() => import("./Loop"));
 const FormControl = React.lazy(() => import("./FormControl"));
 const FormUnControlled = React.lazy(() => import("./FormUnControlled"));
+const ContextComp = React.lazy(() => import("./ContextComp"));
 
 const App = () => {
   const router = createBrowserRouter([
@@ -49,6 +51,10 @@ const App = () => {
         {
           path: "test/:id",
           element: <Test />,
+        },
+        {
+          path: "context",
+          element: <ContextComp />,
         },
       ],
     },
@@ -73,9 +79,11 @@ const App = () => {
     },
   ]);
   return (
-    <Suspense fallback={<h3>Loading...</h3>}>
-      <RouterProvider router={router} />
-    </Suspense>
+    <Context>
+      <Suspense fallback={<h3>Loading...</h3>}>
+        <RouterProvider router={router} />
+      </Suspense>
+    </Context>
     // fragment
     // <div className="App">
     //   <UseCallBack />
