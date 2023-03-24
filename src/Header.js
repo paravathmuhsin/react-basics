@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -7,22 +7,68 @@ const Header = () => {
       <div className="Header">
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <NavLink
+              className={({ isActive }) => (isActive ? "active" : "")}
+              to="/"
+            >
+              Home
+            </NavLink>
           </li>
           <li>
-            <Link to="/life-cycle">Life Cycle</Link>
+            <NavLink
+              className={({ isActive }) => (isActive ? "active" : "")}
+              to="/life-cycle"
+            >
+              Life Cycle
+            </NavLink>
           </li>
           <li>
-            <Link to="/test/444">Test</Link>
+            <NavLink
+              className={({ isActive }) => (isActive ? "active" : "")}
+              to="/test/444"
+            >
+              Test
+            </NavLink>
           </li>
           <li>
-            <Link to="/context">Context</Link>
+            <NavLink
+              className={({ isActive }) => (isActive ? "active" : "")}
+              to="/context"
+            >
+              Context
+            </NavLink>
           </li>
           <li>
-            <Link to="/form/controlled">controlled</Link>
+            <NavLink
+              className={({ isActive }) => (isActive ? "active" : "")}
+              to="/http-calls"
+            >
+              HTTP Calls
+            </NavLink>
           </li>
           <li>
-            <Link to="/form/un-controlled">un-controlled</Link>
+            <NavLink
+              className={({ isActive }) => (isActive ? "active" : "")}
+              to="/axios"
+            >
+              Axios
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              className={({ isActive }) => (isActive ? "active" : "")}
+              to="/form/controlled"
+            >
+              controlled
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              className={({ isActive }) => (isActive ? "active" : "")}
+              to="/form/un-controlled"
+            >
+              un-controlled
+            </NavLink>
           </li>
         </ul>
       </div>

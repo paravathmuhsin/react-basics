@@ -31,6 +31,8 @@ const Loop = React.lazy(() => import("./Loop"));
 const FormControl = React.lazy(() => import("./FormControl"));
 const FormUnControlled = React.lazy(() => import("./FormUnControlled"));
 const ContextComp = React.lazy(() => import("./ContextComp"));
+const Fetch = React.lazy(() => import("./Fetch"));
+const Axios = React.lazy(() => import("./Axios"));
 
 const App = () => {
   const router = createBrowserRouter([
@@ -55,6 +57,14 @@ const App = () => {
         {
           path: "context",
           element: <ContextComp />,
+        },
+        {
+          path: "http-calls",
+          element: <Fetch />,
+        },
+        {
+          path: "axios",
+          element: <Axios />,
         },
       ],
     },
