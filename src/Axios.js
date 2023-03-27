@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import axiosInstane from "./axiosHelper";
 
 const Axios = () => {
   const [posts, setPosts] = useState([]);
   useEffect(() => {
-    axios.get("/posts").then((response) => {
+    axiosInstane.get("/posts").then((response) => {
       // handle success
       setPosts(response.data);
     });
