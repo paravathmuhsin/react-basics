@@ -4,6 +4,7 @@ import First from "./First";
 import Func from "./Func";
 import Props from "./Props";
 import State from "./State";
+import LifeCycles from "./LifeCycles";
 class App extends Component {
   // constructor() {
   //   super();
@@ -12,7 +13,8 @@ class App extends Component {
   render() {
     return (
       <>
-        <State />
+        <LifeCycles />
+        {/* <State /> */}
         <Props />
         <Func />
         <First />
