@@ -3,6 +3,7 @@ import "./App.css";
 import First from "./First";
 import Func from "./Func";
 import Props from "./Props";
+import State from "./State";
 class App extends Component {
   // constructor() {
   //   super();
@@ -11,6 +12,7 @@ class App extends Component {
   render() {
     return (
       <>
+        <State />
         <Props />
         <Func />
         <First />
