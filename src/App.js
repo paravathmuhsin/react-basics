@@ -5,6 +5,7 @@ import Func from "./Func";
 import Props from "./Props";
 import State from "./State";
 import LifeCycles from "./LifeCycles";
+import Event from "./Event";
 class App extends Component {
   // constructor() {
   //   super();
@@ -13,6 +14,7 @@ class App extends Component {
   render() {
     return (
       <>
+        <Event />
         <LifeCycles />
         {/* <State /> */}
         <Props />
