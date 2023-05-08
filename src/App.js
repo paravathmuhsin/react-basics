@@ -6,6 +6,8 @@ import Props from "./Props";
 import State from "./State";
 import LifeCycles from "./LifeCycles";
 import Event from "./Event";
+import Ref from "./Ref";
+import Loop from "./Loop";
 class App extends Component {
   // constructor() {
   //   super();
@@ -14,15 +16,15 @@ class App extends Component {
   render() {
     return (
       <>
+        <Loop />
+        <Ref />
         <Event />
         <LifeCycles />
         {/* <State /> */}
         <Props />
         <Func />
         <First />
-        <h1 className={this.name}>
-          HIii - {[<p>sss</p>, <span>frfrfrr</span>]}
-        </h1>
+        <h1 className={this.name}>HIii</h1>
       </>
     );
   }
