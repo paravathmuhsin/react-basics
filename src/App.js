@@ -8,6 +8,9 @@ import LifeCycles from "./LifeCycles";
 import Event from "./Event";
 import Ref from "./Ref";
 import Loop from "./Loop";
+import HOC from "./HOC";
+import FormControlled from "./FormControlled";
+import FormUnControlled from "./FormUnControlled";
 class App extends Component {
   // constructor() {
   //   super();
@@ -16,6 +19,9 @@ class App extends Component {
   render() {
     return (
       <>
+        <FormUnControlled />
+        <FormControlled />
+        <HOC name="test" />
         <Loop />
         <Ref />
         <Event />
