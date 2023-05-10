@@ -11,6 +11,9 @@ import Loop from "./Loop";
 import HOC from "./HOC";
 import FormControlled from "./FormControlled";
 import FormUnControlled from "./FormUnControlled";
+import UseState from "./UseState";
+import UseRef from "./UseRef";
+import UseEffect from "./UseEffect";
 class App extends Component {
   // constructor() {
   //   super();
@@ -19,6 +22,9 @@ class App extends Component {
   render() {
     return (
       <>
+        <UseEffect />
+        {/* <UseRef />
+        <UseState />
         <FormUnControlled />
         <FormControlled />
         <HOC name="test" />
@@ -27,10 +33,10 @@ class App extends Component {
         <Event />
         <LifeCycles />
         {/* <State /> */}
-        <Props />
+        {/* <Props />
         <Func />
         <First />
-        <h1 className={this.name}>HIii</h1>
+        <h1 className={this.name}>HIii</h1> */}
       </>
     );
   }
