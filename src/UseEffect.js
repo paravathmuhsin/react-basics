@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import Memo from "./Memo";
 
 const UseEffect = () => {
@@ -9,10 +9,13 @@ const UseEffect = () => {
       console.log("will unmount");
     };
   }, []);
+  const test = useCallback(() => {
+    console.log("ddd");
+  }, []);
   return (
     <h2>
       UseEffect - {first}
-      <Memo name={first} />
+      <Memo name={test} />
       <button
         onClick={() => {
           setFirst("Hello");

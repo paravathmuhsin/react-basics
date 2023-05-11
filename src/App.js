@@ -14,6 +14,8 @@ import FormUnControlled from "./FormUnControlled";
 import UseState from "./UseState";
 import UseRef from "./UseRef";
 import UseEffect from "./UseEffect";
+import UseMemo from "./UseMemo";
+import UseCallback from "./UseCallback";
 class App extends Component {
   // constructor() {
   //   super();
@@ -22,6 +24,8 @@ class App extends Component {
   render() {
     return (
       <>
+        <UseCallback />
+        <UseMemo />
         <UseEffect />
         {/* <UseRef />
         <UseState />
