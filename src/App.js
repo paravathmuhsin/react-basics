@@ -16,6 +16,7 @@ import UseRef from "./UseRef";
 import UseEffect from "./UseEffect";
 import UseMemo from "./UseMemo";
 import UseCallback from "./UseCallback";
+import AppRouter from "./AppRouter";
 class App extends Component {
   // constructor() {
   //   super();
@@ -23,10 +24,10 @@ class App extends Component {
   name = "Test";
   render() {
     return (
-      <>
-        <UseCallback />
+      <AppRouter>
+        {/* <UseCallback />
         <UseMemo />
-        <UseEffect />
+        <UseEffect /> */}
         {/* <UseRef />
         <UseState />
         <FormUnControlled />
@@ -41,7 +42,7 @@ class App extends Component {
         <Func />
         <First />
         <h1 className={this.name}>HIii</h1> */}
-      </>
+      </AppRouter>
     );
   }
 }
