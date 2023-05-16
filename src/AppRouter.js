@@ -9,6 +9,7 @@ const Event = React.lazy(() => import("./Event"));
 const LifeCycles = React.lazy(() => import("./LifeCycles"));
 const Header = React.lazy(() => import("./Header"));
 const FormUnControlled = React.lazy(() => import("./FormUnControlled"));
+const Consumer = React.lazy(() => import("./Consumer"));
 
 const router = createBrowserRouter([
   {
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
       {
         path: "event",
         element: <Event />,
+      },
+      {
+        path: "context",
+        element: <Consumer />,
       },
 
       {

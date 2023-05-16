@@ -1,6 +1,8 @@
 import React from "react";
+import { useAppContext } from "./ContextComp";
 
 const Loop = () => {
+  const { theme } = useAppContext();
   const a = [
     {
       id: 1,
@@ -21,7 +23,7 @@ const Loop = () => {
   // [<p>"nike"</p>,<p>"adidas"</p>, <p>"Puma"</p>]
   return (
     <h2>
-      Loop
+      Loop - {theme}
       {a.map((item, index) => {
         return (
           <div key={item.id}>

@@ -55,6 +55,14 @@ const Header = () => {
               Form un controlled
             </NavLink>
           </li>
+          <li>
+            <NavLink
+              to="/context"
+              className={({ isActive }) => (isActive ? "active" : "")}
+            >
+              Context
+            </NavLink>
+          </li>
         </ul>
       </nav>
       <Outlet />
