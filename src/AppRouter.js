@@ -10,6 +10,8 @@ const LifeCycles = React.lazy(() => import("./LifeCycles"));
 const Header = React.lazy(() => import("./Header"));
 const FormUnControlled = React.lazy(() => import("./FormUnControlled"));
 const Consumer = React.lazy(() => import("./Consumer"));
+const API = React.lazy(() => import("./API"));
+const UseEffect = React.lazy(() => import("./UseEffect"));
 
 const router = createBrowserRouter([
   {
@@ -41,9 +43,17 @@ const router = createBrowserRouter([
         path: "context",
         element: <Consumer />,
       },
+      {
+        path: "api",
+        element: <API />,
+      },
+      {
+        path: "effect",
+        element: <UseEffect />,
+      },
 
       {
-        path: "/form",
+        path: "form",
         element: (
           <>
             <h2>Form</h2>

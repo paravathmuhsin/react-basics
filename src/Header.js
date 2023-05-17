@@ -63,6 +63,22 @@ const Header = () => {
               Context
             </NavLink>
           </li>
+          <li>
+            <NavLink
+              to="/api"
+              className={({ isActive }) => (isActive ? "active" : "")}
+            >
+              API
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/effect"
+              className={({ isActive }) => (isActive ? "active" : "")}
+            >
+              Effect
+            </NavLink>
+          </li>
         </ul>
       </nav>
       <Outlet />
