@@ -1,26 +1,28 @@
-import React, { Component } from "react";
+import React from "react";
 
-export default class Event extends Component {
-  constructor() {
-    super();
-    // Event{}
-    this.bindedFun = this.clickHandler.bind(this);
-  }
-  state = {
-    name: "John",
+// clickHandler(event, 'click');
+
+const Event = () => {
+  const eventHandler = (e, type) => {
+    console.log(e, type);
   };
-  clickHandler(e) {
-    // console.log(this);
-    this.setState({ name: "David" });
-  }
+  return (
+    <div>
+      Event
+      <input
+        onChange={(e) => {
+          eventHandler(e, "change");
+        }}
+      />
+      <button
+        onClick={(e) => {
+          eventHandler(e, "click");
+        }}
+      >
+        Click me
+      </button>
+    </div>
+  );
+};
 
-  render() {
-    return (
-      <>
-        <h2>Event - {this.state.name}</h2>
-        <input onChange={this.clickHandler} type="text" />
-        <button onClick={this.bindedFun}>Update</button>
-      </>
-    );
-  }
-}
+export default Event;

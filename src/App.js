@@ -1,19 +1,30 @@
-import React, { Component } from "react";
 import "./App.css";
-import AppRouter from "./AppRouter";
-import ContextComp from "./ContextComp";
-class App extends Component {
-  // constructor() {
-  //   super();
-  // }
-  name = "Test";
-  render() {
-    return (
-      <ContextComp>
-        <AppRouter />
-      </ContextComp>
-    );
-  }
+import Event from "./Event";
+import First from "./First";
+import JSX from "./JSX";
+import LifeCycle from "./LifeCycle";
+import PropClass from "./PropClass";
+import PropsFun from "./PropsFun";
+import Second from "./Second";
+import StateClass from "./StateClass";
+
+function App() {
+  const name = "David";
+  return (
+    <div>
+      <h1 className="App">Hiiii</h1>
+      <Event />
+      <LifeCycle />
+      <JSX />
+      <StateClass />
+      <PropsFun name={name} age={44}>
+        Hiiiiiii
+      </PropsFun>
+      <PropClass name={name} age={44} />
+      <First />
+      <Second />
+    </div>
+  );
 }
 
 export default App;

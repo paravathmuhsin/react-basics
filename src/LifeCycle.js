@@ -1,19 +1,16 @@
 import React, { Component } from "react";
 
-export default class LifeCycles extends Component {
+export default class LifeCycle extends Component {
   constructor() {
     super();
     console.log("constructor");
   }
-  state = {
-    name: "David",
-  };
   componentDidMount() {
     console.log("componentDidMount");
   }
-  shouldComponentUpdate(currentProp, currentState) {
-    console.log("shouldComponentUpdate", currentState, this.state);
-    return currentState.name !== this.state.name;
+  shouldComponentUpdate(prop, newStat) {
+    console.log("shouldComponentUpdate", newStat, this.state);
+    return this.state.name !== newStat.name;
   }
   componentDidUpdate() {
     console.log("componentDidUpdate");
@@ -21,19 +18,23 @@ export default class LifeCycles extends Component {
   componentWillUnmount() {
     console.log("componentWillUnmount");
   }
+  state = {
+    name: "David",
+  };
+
   render() {
     console.log("render");
     return (
-      <h2>
-        LifeCycles - {this.state.name}
+      <div>
+        LifeCycle - {this.state.name}
         <button
           onClick={() => {
-            this.setState({ name: "John" });
+            this.setState({ name: "Hari" });
           }}
         >
-          Click
+          update
         </button>
-      </h2>
+      </div>
     );
   }
 }
