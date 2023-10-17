@@ -1,3 +1,4 @@
+import UseState from "./UseState";
 import "./App.css";
 import Event from "./Event";
 import First from "./First";
@@ -9,12 +10,15 @@ import PropsFun from "./PropsFun";
 import Ref from "./Ref";
 import Second from "./Second";
 import StateClass from "./StateClass";
+import UseEffect from "./UseEffect";
 
 function App() {
   const name = "David";
   return (
     <div>
       <h1 className="App">Hiiii</h1>
+      {/* <UseEffect /> */}
+      <UseState />
       <Keys />
       <Ref />
       <Event />
