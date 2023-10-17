@@ -2,9 +2,11 @@ import "./App.css";
 import Event from "./Event";
 import First from "./First";
 import JSX from "./JSX";
+import Keys from "./Keys";
 import LifeCycle from "./LifeCycle";
 import PropClass from "./PropClass";
 import PropsFun from "./PropsFun";
+import Ref from "./Ref";
 import Second from "./Second";
 import StateClass from "./StateClass";
 
@@ -13,6 +15,8 @@ function App() {
   return (
     <div>
       <h1 className="App">Hiiii</h1>
+      <Keys />
+      <Ref />
       <Event />
       <LifeCycle />
       <JSX />
