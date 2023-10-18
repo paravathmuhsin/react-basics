@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import PropsFun from "./PropsFun";
+import RefForward from "./RefForward";
 
 const Ref = () => {
   const paraRef = useRef();
@@ -8,12 +8,9 @@ const Ref = () => {
   };
   return (
     <div>
-      Ref -
-      <p ref={paraRef} onClick={clickHandler}>
-        Ref element
-      </p>
+      Ref -<p onClick={clickHandler}>Ref element</p>
       {/* <StateClass /> */}
-      <PropsFun />
+      <RefForward ref={paraRef} />
     </div>
   );
 };

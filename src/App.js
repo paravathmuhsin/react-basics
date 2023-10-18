@@ -10,13 +10,15 @@ import PropsFun from "./PropsFun";
 import Ref from "./Ref";
 import Second from "./Second";
 import StateClass from "./StateClass";
-import UseEffect from "./UseEffect";
+// import UseEffect from "./UseEffect";
+import CallbackHook from "./CallbackHook";
 
 function App() {
   const name = "David";
   return (
     <div>
       <h1 className="App">Hiiii</h1>
+      <CallbackHook />
       {/* <UseEffect /> */}
       <UseState />
       <Keys />
