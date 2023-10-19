@@ -13,12 +13,16 @@ import StateClass from "./StateClass";
 // import UseEffect from "./UseEffect";
 import CallbackHook from "./CallbackHook";
 import MemoHook from "./MemoHook";
+import FormControlled from "./FormControlled";
+import FormUncontrolled from "./FormUncontrolled";
 
 function App() {
   const name = "David";
   return (
     <div>
       <h1 className="App">Hiiii</h1>
+      <FormControlled />
+      <FormUncontrolled />
       <MemoHook />
       <CallbackHook />
       {/* <UseEffect /> */}
