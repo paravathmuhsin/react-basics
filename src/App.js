@@ -12,12 +12,14 @@ import Second from "./Second";
 import StateClass from "./StateClass";
 // import UseEffect from "./UseEffect";
 import CallbackHook from "./CallbackHook";
+import MemoHook from "./MemoHook";
 
 function App() {
   const name = "David";
   return (
     <div>
       <h1 className="App">Hiiii</h1>
+      <MemoHook />
       <CallbackHook />
       {/* <UseEffect /> */}
       <UseState />
