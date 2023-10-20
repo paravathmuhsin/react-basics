@@ -1,20 +1,26 @@
-import React from "react";
+import React, { useRef } from "react";
 
 const FormUncontrolled = () => {
+  const fname = useRef(null);
+  const lname = useRef(null);
+
   const submitHandler = (e) => {
     e.preventDefault();
+    // const data = new FormData(e.target);
+    // console.log(Object.fromEntries(data.entries()));
+    console.log({ fname: fname.current.value, lname: lname.current.value });
   };
   return (
     <div>
       FormUncontrolled
       <form onSubmit={submitHandler}>
-        <label for="fname">First name:</label>
+        <label htmlFor="fname">First name:</label>
         <br />
-        <input type="text" id="fname" name="fname" value="John" />
+        <input type="text" ref={fname} id="fname" name="fname" />
         <br />
-        <label for="lname">Last name:</label>
+        <label htmlFor="lname">Last name:</label>
         <br />
-        <input type="text" id="lname" name="lname" value="Doe" />
+        <input type="text" ref={lname} id="lname" name="lname" />
         <br />
         <input type="submit" value="Submit" />
         <br />
