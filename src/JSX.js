@@ -1,6 +1,8 @@
 import React, { Fragment } from "react";
+import withHOC from "./HOC";
 
-const JSX = () => {
+const JSX = (props) => {
+  console.log(props)
   const add = (a, b) => a + b;
   const name = {
     fname: "David",
@@ -16,4 +18,4 @@ const JSX = () => {
   );
 };
 
-export default JSX;
+export default withHOC(JSX);

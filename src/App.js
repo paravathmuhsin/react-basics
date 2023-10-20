@@ -31,7 +31,7 @@ function App() {
       <Ref />
       <Event />
       <LifeCycle />
-      <JSX />
+      <JSX name="sddss" />
       <StateClass />
       <PropsFun name={name} age={44}>
         Hiiiiiii
