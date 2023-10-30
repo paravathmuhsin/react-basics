@@ -1,7 +1,7 @@
-import UseState from "./UseState";
+// import UseState from "./UseState";
 import "./App.css";
 // import Event from "./Event";
-import First from "./First";
+// import First from "./First";
 // import JSX from "./JSX";
 // import Keys from "./Keys";
 // import LifeCycle from "./LifeCycle";
@@ -10,11 +10,10 @@ import First from "./First";
 // import Ref from "./Ref";
 // import Second from "./Second";
 // import StateClass from "./StateClass";
-import UseEffect from "./UseEffect";
+// import UseEffect from "./UseEffect";
 // import CallbackHook from "./CallbackHook";
 // import MemoHook from "./MemoHook";
-import FormControlled from "./FormControlled";
-import FormUncontrolled from "./FormUncontrolled";
+// import FormUncontrolled from "./FormUncontrolled";
 import {
   Link,
   NavLink,
@@ -22,9 +21,23 @@ import {
   RouterProvider,
   createBrowserRouter,
 } from "react-router-dom";
-import Redirect from "./Redirect";
+// import Redirect from "./Redirect";
+import { Suspense, createContext, lazy, useContext, useState } from "react";
+
+const FormControlled = lazy(() => import("./FormControlled"));
+const FormUncontrolled = lazy(() => import("./FormUncontrolled"));
+const First = lazy(() => import("./First"));
+const UseState = lazy(() => import("./UseState"));
+const UseEffect = lazy(() => import("./UseEffect"));
+const Redirect = lazy(() => import("./Redirect"));
+const Context = lazy(() => import("./Context"));
+
+const ThemeContext = createContext("light");
+
+const useThemeContext = () => useContext(ThemeContext);
 
 function App() {
+  const [theme, setTheme] = useState("light");
   // const name = "David";
   const appRouter = createBrowserRouter([
     {
@@ -90,6 +103,14 @@ function App() {
                   Redirect
                 </NavLink>
               </li>
+              <li>
+                <NavLink
+                  to="/context"
+                  className={({ isActive }) => (isActive ? "active" : "")}
+                >
+                  Context
+                </NavLink>
+              </li>
             </ul>
           </div>
           <Outlet />
@@ -125,11 +146,26 @@ function App() {
           path: "redirect",
           element: <Redirect />,
         },
+        {
+          path: "context",
+          element: <Context />,
+        },
       ],
     },
   ]);
   return (
-    <RouterProvider router={appRouter} />
+    <ThemeContext.Provider value={theme}>
+      <button
+        onClick={() => {
+          setTheme((state) => (state === "light" ? "dark" : "light"));
+        }}
+      >
+        Click to change theme into {theme === "light" ? "Dark" : "Light"}
+      </button>
+      <Suspense fallback={<h2>Loading...</h2>}>
+        <RouterProvider router={appRouter} />
+      </Suspense>
+    </ThemeContext.Provider>
     // <div>
     //   <h1 className="App">Hiiii</h1>
     //   <FormControlled />
@@ -155,3 +191,4 @@ function App() {
 }
 
 export default App;
+export { useThemeContext };
