@@ -31,6 +31,7 @@ const UseState = lazy(() => import("./UseState"));
 const UseEffect = lazy(() => import("./UseEffect"));
 const Redirect = lazy(() => import("./Redirect"));
 const Context = lazy(() => import("./Context"));
+const HttpReq = lazy(() => import("./HttpReq"));
 
 const ThemeContext = createContext("light");
 
@@ -111,6 +112,14 @@ function App() {
                   Context
                 </NavLink>
               </li>
+              <li>
+                <NavLink
+                  to="/http-req"
+                  className={({ isActive }) => (isActive ? "active" : "")}
+                >
+                  Http Req
+                </NavLink>
+              </li>
             </ul>
           </div>
           <Outlet />
@@ -149,6 +158,10 @@ function App() {
         {
           path: "context",
           element: <Context />,
+        },
+        {
+          path: "http-req",
+          element: <HttpReq />,
         },
       ],
     },
