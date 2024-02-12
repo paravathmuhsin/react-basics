@@ -1,5 +1,12 @@
+import ClassComp from "./ClassComp";
+
 function First() {
-    return <p>Its my first component</p>
+  return (
+    <div>
+      <p>Its my first component</p>
+      <ClassComp />
+    </div>
+  );
 }
 
 export default First;
