@@ -25,7 +25,9 @@ class ClassComp extends Component {
   };
 
   componentDidMount(){
-    console.log('componentDidMount')
+    console.log('componentDidMount');
+    
+    console.log(this.props)
   }
   componentDidUpdate(){
     console.log('componentDidUpdate')
