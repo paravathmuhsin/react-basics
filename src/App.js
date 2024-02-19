@@ -5,6 +5,8 @@ import First from "./First";
 import FunComp from "./FunComp";
 import Keys from "./Keys";
 import Ref from "./Ref";
+import UseEffectComp from "./UseEffectComp";
+import UseStateComp from "./UseStateComp";
 
 function App() {
   const name = "React app";
@@ -15,6 +17,8 @@ function App() {
   return (
     <div className="App">
       <h1>Welcome to my first {name}</h1>
+      <UseEffectComp />
+      <UseStateComp />
       <Keys />
       <Ref />
       <Event />

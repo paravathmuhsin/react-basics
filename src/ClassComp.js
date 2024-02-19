@@ -1,10 +1,11 @@
-import React, { Component } from "react";
+import React, { Component, createRef } from "react";
 
 class ClassComp extends Component {
   constructor(){
     super();
     console.log('constructor');
   }
+  divRef = createRef();
   // state managment
   state = {
     age: 44,
@@ -43,7 +44,7 @@ class ClassComp extends Component {
     console.log('render')
     return (
       <div>
-        <div onClick={this.clickHandler}>
+        <div ref={this.divRef} onClick={this.clickHandler}>
           ClassComp - {this.name}@{this.state.age} - {this.state.country}
         </div>
         <button onClick={this.buttonClickHander}>
