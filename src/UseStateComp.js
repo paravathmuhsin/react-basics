@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import MemoComp from "./MemoComp";
 
 const UseStateComp = () => {
     const [state, setState] = useState("Hii");
@@ -13,6 +14,7 @@ const UseStateComp = () => {
     <>
       <div onClick={clickHandler}>UseState - {state}</div>
       <span onClick={clickHandler2}> {name}</span>
+      <MemoComp />
     </>
   );
 };

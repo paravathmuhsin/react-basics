@@ -5,7 +5,9 @@ import First from "./First";
 import FunComp from "./FunComp";
 import Keys from "./Keys";
 import Ref from "./Ref";
+import UseCallbackComp from "./UseCallbackComp";
 import UseEffectComp from "./UseEffectComp";
+import UseMemoComp from "./UseMemoComp";
 import UseStateComp from "./UseStateComp";
 
 function App() {
@@ -17,10 +19,12 @@ function App() {
   return (
     <div className="App">
       <h1>Welcome to my first {name}</h1>
-      <UseEffectComp />
-      <UseStateComp />
-      <Keys />
       <Ref />
+      <UseCallbackComp />
+      <UseMemoComp />
+      <UseStateComp />
+      <UseEffectComp />
+      <Keys />
       <Event />
       <FunComp name={name} age={44}>
         Hii

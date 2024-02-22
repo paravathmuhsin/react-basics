@@ -8,7 +8,7 @@ const UseEffectComp = () => {
     return () => {
       console.log("Component will unmount");
     };
-  }, [state]);
+  }, []);
   useEffect(() => {
     console.log("From UseEffect - updated state2");
   }, [state2]);

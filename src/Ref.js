@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
-import ClassComp from "./ClassComp";
+// import ClassComp from "./ClassComp";
+import RefFunc from "./RefFunc";
 
 const Ref = () => {
   const paraRef = useRef();
@@ -10,7 +11,8 @@ const Ref = () => {
     <div>
       Ref
       <p onClick={clickHandler}>reference element</p>
-      <ClassComp ref={paraRef} />
+      {/* <ClassComp ref={paraRef} /> */}
+      <RefFunc ref={paraRef} />
     </div>
   );
 };
