@@ -1,6 +1,6 @@
 import React, { forwardRef, useImperativeHandle } from "react";
 
-const RefFunc = forwardRef((props, ref) => {
+const RefFunc = (props, ref) => {
   useImperativeHandle(
     ref,
     () => {
@@ -11,6 +11,6 @@ const RefFunc = forwardRef((props, ref) => {
     []
   );
   return <div>RefFunc</div>;
-});
+};
 
-export default RefFunc;
+export default forwardRef(RefFunc);

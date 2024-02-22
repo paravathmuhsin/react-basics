@@ -5,7 +5,7 @@ import RefFunc from "./RefFunc";
 const Ref = () => {
   const paraRef = useRef();
   const clickHandler = () => {
-    console.log(paraRef.current);
+    console.log(paraRef.current.value);
   };
   return (
     <div>

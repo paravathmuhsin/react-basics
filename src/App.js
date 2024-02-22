@@ -2,7 +2,10 @@ import "./App.css";
 import ClassComp from "./ClassComp";
 import Event from "./Event";
 import First from "./First";
+import FormRef from "./FormRef";
+import FormState from "./FormState";
 import FunComp from "./FunComp";
+import HocComp from "./HocComp";
 import Keys from "./Keys";
 import Ref from "./Ref";
 import UseCallbackComp from "./UseCallbackComp";
@@ -19,6 +22,9 @@ function App() {
   return (
     <div className="App">
       <h1>Welcome to my first {name}</h1>
+      <FormRef />
+      <FormState />
+      <HocComp name="Test" age={33} />
       <Ref />
       <UseCallbackComp />
       <UseMemoComp />
