@@ -1,6 +1,8 @@
 import React from "react";
+import { useParams } from "react-router-dom";
 
 const Keys = () => {
+  const { id } = useParams();
   const arr = [
     {
       brand: "Nike",
@@ -17,7 +19,7 @@ const Keys = () => {
   ];
   return (
     <>
-      <h3>Loops and Keys</h3>
+      <h3>Loops and Keys - {id}</h3>
       <div>
         {arr.map((i) => {
           return (
