@@ -1,19 +1,28 @@
+import { Suspense, createContext, lazy } from "react";
 import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
 import "./App.css";
 // import ClassComp from "./ClassComp";
-import Event from "./Event";
+// import Event from "./Event";
 // import First from "./First";
-import FormRef from "./FormRef";
-import FormState from "./FormState";
+// import FormRef from "./FormRef";
+// import FormState from "./FormState";
 // import FunComp from "./FunComp";
-import HocComp from "./HocComp";
-import Header from "./Header";
-import Keys from "./Keys";
+// import HocComp from "./HocComp";
+// import Header from "./Header";
+// import Keys from "./Keys";
 // import Ref from "./Ref";
 // import UseCallbackComp from "./UseCallbackComp";
 // import UseEffectComp from "./UseEffectComp";
 // import UseMemoComp from "./UseMemoComp";
 // import UseStateComp from "./UseStateComp";
+
+const Event = lazy(() => import("./Event"));
+const FormRef = lazy(() => import("./FormRef"));
+const FormState = lazy(() => import("./FormState"));
+const HocComp = lazy(() => import("./HocComp"));
+const Header = lazy(() => import("./Header"));
+const Keys = lazy(() => import("./Keys"));
+const UseCallbackComp = lazy(() => import("./UseCallbackComp"));
 
 const appRouter = createBrowserRouter([
   {
@@ -51,10 +60,14 @@ const appRouter = createBrowserRouter([
         path: "user/:id",
         element: <Keys />,
       },
-      
+
       {
         path: "event",
         element: <Event />,
+      },
+      {
+        path: "use-callback",
+        element: <UseCallbackComp />,
       },
     ],
   },
@@ -63,6 +76,8 @@ const appRouter = createBrowserRouter([
     element: <div>404 Not Found</div>,
   },
 ]);
+
+export const AppContext = createContext(null);
 
 function App() {
   // const name = "React app";
@@ -92,7 +107,13 @@ function App() {
   //     <First />
   //   </div>
   // );
-  return <RouterProvider router={appRouter} />;
+  return (
+    <AppContext.Provider value={{ theme: "light" }}>
+      <Suspense fallback={<h2>Loading...</h2>}>
+        <RouterProvider router={appRouter} />
+      </Suspense>
+    </AppContext.Provider>
+  );
 }
 
 export default App;

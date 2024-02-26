@@ -1,6 +1,11 @@
 .Header ul {
-  background: chartreuse;
   padding: 10px 0;
+}
+.Header.light ul {
+  background: #7fff00;
+}
+.Header.dark ul {
+  background: #e4a10f;
 }
 .Header ul li {
   display: inline-block;

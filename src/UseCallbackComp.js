@@ -16,7 +16,7 @@ const UseCallbackComp = () => {
       >
         UseCallbackComp - {name}
       </p>
-      <MemoComp adhsa={func} />
+      <MemoComp ss={func} />
     </div>
   );
 };

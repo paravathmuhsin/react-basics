@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import "./Header.css";
+import { AppContext } from "./App";
 
 const Header = () => {
+  const { theme } = useContext(AppContext);
   return (
-    <div className="Header">
+    <div className={`Header ${theme}`}>
       <ul>
         <li>
           <NavLink
@@ -38,7 +40,7 @@ const Header = () => {
             HOC
           </NavLink>
         </li>
-        
+
         <li>
           <NavLink
             className={({ isActive }) => (isActive ? "active" : "")}
@@ -53,6 +55,14 @@ const Header = () => {
             to="/event"
           >
             Event
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            className={({ isActive }) => (isActive ? "active" : "")}
+            to="/use-callback"
+          >
+            Use callback
           </NavLink>
         </li>
       </ul>
