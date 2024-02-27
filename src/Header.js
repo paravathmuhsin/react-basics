@@ -4,7 +4,10 @@ import "./Header.css";
 import { AppContext } from "./App";
 
 const Header = () => {
-  const { theme } = useContext(AppContext);
+  const { theme, setTheme } = useContext(AppContext);
+  const clickHandler = () => {
+    setTheme(theme === "light" ? "dark" : "light");
+  };
   return (
     <div className={`Header ${theme}`}>
       <ul>
@@ -64,6 +67,17 @@ const Header = () => {
           >
             Use callback
           </NavLink>
+        </li>
+        <li>
+          <NavLink
+            className={({ isActive }) => (isActive ? "active" : "")}
+            to="/api"
+          >
+            API
+          </NavLink>
+        </li>
+        <li className="theme-switch">
+          <button onClick={clickHandler}>{theme}</button>
         </li>
       </ul>
     </div>

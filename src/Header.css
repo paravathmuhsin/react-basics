@@ -12,5 +12,10 @@
   margin-right: 20px;
 }
 .Header ul li a.active {
-    font-weight: bold;
+  font-weight: bold;
+}
+
+.Header ul li.theme-switch {
+  position: absolute;
+  right: 0;
 }

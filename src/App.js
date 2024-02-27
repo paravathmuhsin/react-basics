@@ -1,4 +1,4 @@
-import { Suspense, createContext, lazy } from "react";
+import { Suspense, createContext, lazy, useState } from "react";
 import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
 import "./App.css";
 // import ClassComp from "./ClassComp";
@@ -23,6 +23,7 @@ const HocComp = lazy(() => import("./HocComp"));
 const Header = lazy(() => import("./Header"));
 const Keys = lazy(() => import("./Keys"));
 const UseCallbackComp = lazy(() => import("./UseCallbackComp"));
+const ApiRequest = lazy(() => import("./ApiRequest"));
 
 const appRouter = createBrowserRouter([
   {
@@ -69,6 +70,10 @@ const appRouter = createBrowserRouter([
         path: "use-callback",
         element: <UseCallbackComp />,
       },
+      {
+        path: "api",
+        element: <ApiRequest />,
+      },
     ],
   },
   {
@@ -80,6 +85,7 @@ const appRouter = createBrowserRouter([
 export const AppContext = createContext(null);
 
 function App() {
+  const [theme, setTheme] = useState("light");
   // const name = "React app";
   // // const name = [<p>test</p>, <p>content</p>];
   // // const testFun = ()=>{
@@ -108,7 +114,7 @@ function App() {
   //   </div>
   // );
   return (
-    <AppContext.Provider value={{ theme: "light" }}>
+    <AppContext.Provider value={{ theme, setTheme }}>
       <Suspense fallback={<h2>Loading...</h2>}>
         <RouterProvider router={appRouter} />
       </Suspense>
