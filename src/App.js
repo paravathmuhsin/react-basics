@@ -4,6 +4,8 @@ import Second from "./Second";
 import StateClass from "./StateClass";
 import LifeCycles from "./LifeCycles";
 import Event from "./Event";
+import Ref from "./Ref";
+import Loop from "./Loop";
 
 // class App extends React.Component {
 //   render() {
@@ -12,7 +14,7 @@ import Event from "./Event";
 // }
 
 function App() {
-  const name = [3, 7, "dddd", <span>ssss</span>];
+  const name = [3, 7, "dddd"];
   const test = "Test";
   const getName = () => {
     return name;
@@ -20,6 +22,8 @@ function App() {
   const link = "https://google.com";
   return (
     <div>
+      <Loop />
+      <Ref />
       <Event />
       <LifeCycles />
       <h1>Hiii {getName()}</h1>
