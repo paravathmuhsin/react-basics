@@ -8,12 +8,15 @@ const Loop = () => {
   ];
   const arr2 = [3, 4, 5, 6];
   return (
-    <div>
-      Loop -{/* [<p>3</p>,<p>4</p>,<p>5</p>,<p>6</p>] */}
-      {arr2.map((item) => (
-        <p key={item}>{item}</p>
-      ))}
-    </div>
+    <>
+      <h2>Loop</h2>
+      <div>
+        {/* [<p>3</p>,<p>4</p>,<p>5</p>,<p>6</p>] */}
+        {arr2.map((item) => (
+          <p key={item}>{item}</p>
+        ))}
+      </div>
+    </>
   );
 };
 

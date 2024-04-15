@@ -6,6 +6,9 @@ import LifeCycles from "./LifeCycles";
 import Event from "./Event";
 import Ref from "./Ref";
 import Loop from "./Loop";
+import UseStateComp from "./UseStateComp";
+import UseEffectComp from "./UseEffectComp";
+import UseRef from "./UseRef";
 
 // class App extends React.Component {
 //   render() {
@@ -22,6 +25,9 @@ function App() {
   const link = "https://google.com";
   return (
     <div>
+      <UseRef />
+      <UseEffectComp />
+      <UseStateComp />
       <Loop />
       <Ref />
       <Event />
