@@ -9,6 +9,7 @@ import Loop from "./Loop";
 import UseStateComp from "./UseStateComp";
 import UseEffectComp from "./UseEffectComp";
 import UseRef from "./UseRef";
+import TopLevel from "./TopLevel";
 
 // class App extends React.Component {
 //   render() {
@@ -26,6 +27,7 @@ function App() {
   return (
     <div>
       <UseRef />
+      {/* <TopLevel />
       <UseEffectComp />
       <UseStateComp />
       <Loop />
@@ -36,7 +38,7 @@ function App() {
       <a href={link}>Link</a>
       <StateClass />
       <FirstClass propTest={test} />
-      <Second propTest={test}>jfdhgfh </Second>
+      <Second propTest={test}>jfdhgfh </Second> */}
     </div>
   );
 }
