@@ -10,6 +10,9 @@ import UseStateComp from "./UseStateComp";
 import UseEffectComp from "./UseEffectComp";
 import UseRef from "./UseRef";
 import TopLevel from "./TopLevel";
+import HOC from "./HOC";
+import FormState from "./FormState";
+import FormRef from "./FormRef";
 
 // class App extends React.Component {
 //   render() {
@@ -26,8 +29,11 @@ function App() {
   const link = "https://google.com";
   return (
     <div>
+      <FormRef />
+      <FormState />
+      <HOC name={name} />
       <UseRef />
-      {/* <TopLevel />
+      <TopLevel />
       <UseEffectComp />
       <UseStateComp />
       <Loop />
@@ -38,7 +44,7 @@ function App() {
       <a href={link}>Link</a>
       <StateClass />
       <FirstClass propTest={test} />
-      <Second propTest={test}>jfdhgfh </Second> */}
+      <Second propTest={test}>jfdhgfh </Second>
     </div>
   );
 }
