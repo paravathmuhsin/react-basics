@@ -13,12 +13,56 @@ import TopLevel from "./TopLevel";
 import HOC from "./HOC";
 import FormState from "./FormState";
 import FormRef from "./FormRef";
+import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
 
 // class App extends React.Component {
 //   render() {
 //     return <h1>Hiii</h1>;
 //   }
 // }
+
+const appRouters = createBrowserRouter([
+  {
+    path: "/",
+    element: (
+      <>
+        <h2 style={{ backgroundColor: "blue" }}>Header</h2>
+        <Outlet />
+      </>
+    ),
+    errorElement: <h2>404 - Not Found</h2>,
+    children: [
+      {
+        path: "form-state",
+        element: <FormState />,
+      },
+      {
+        path: "form-ref",
+        element: <FormRef />,
+      },
+      {
+        path: "hoc",
+        element: <HOC />,
+      },
+      {
+        path: "effect",
+        element: <UseEffectComp />,
+      },
+      {
+        path: "state",
+        element: <UseStateComp />,
+      },
+      {
+        path: "ref",
+        element: <UseRef />,
+      },
+      {
+        path: "*",
+        element: <h2>404 - Not Found ---</h2>,
+      },
+    ],
+  },
+]);
 
 function App() {
   const name = [3, 7, "dddd"];
@@ -28,24 +72,25 @@ function App() {
   };
   const link = "https://google.com";
   return (
-    <div>
-      <FormRef />
-      <FormState />
-      <HOC name={name} />
-      <UseRef />
-      <TopLevel />
-      <UseEffectComp />
-      <UseStateComp />
-      <Loop />
-      <Ref />
-      <Event />
-      <LifeCycles />
-      <h1>Hiii {getName()}</h1>
-      <a href={link}>Link</a>
-      <StateClass />
-      <FirstClass propTest={test} />
-      <Second propTest={test}>jfdhgfh </Second>
-    </div>
+    <RouterProvider router={appRouters} />
+    // <div>
+    //   <FormRef />
+    //   {/* <FormState />
+    //   <HOC name={name} />
+    //   <UseRef />
+    //   <TopLevel />
+    //   <UseEffectComp />
+    //   <UseStateComp />
+    //   <Loop />
+    //   <Ref />
+    //   <Event />
+    //   <LifeCycles />
+    //   <h1>Hiii {getName()}</h1>
+    //   <a href={link}>Link</a>
+    //   <StateClass />
+    //   <FirstClass propTest={test} /> */}
+    //   <Second propTest={test}>jfdhgfh </Second>
+    // </div>
   );
 }
 
