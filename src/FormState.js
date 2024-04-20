@@ -20,7 +20,7 @@ const FormState = () => {
     <>
       <div>FormState</div>
       <form onSubmit={submitHandler}>
-        <label for="fname">First name:</label>
+        <label htmlFor="fname">First name:</label>
         <br />
         <input
           type="text"
@@ -30,7 +30,7 @@ const FormState = () => {
           value={form.fname}
         />
         <br />
-        <label for="lname">Last name:</label>
+        <label htmlFor="lname">Last name:</label>
         <br />
         <input
           type="text"

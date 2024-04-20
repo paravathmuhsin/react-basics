@@ -1,0 +1,16 @@
+.Header {
+  background-color: aquamarine;
+  padding: 10px 0;
+}
+
+.Header ul li {
+  display: inline-block;
+}
+
+.Header ul li a {
+  text-decoration: none;
+  padding: 5px 15px;
+}
+.Header ul li a.active {
+  background-color: #eca8b3;
+}

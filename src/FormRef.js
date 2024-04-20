@@ -19,11 +19,11 @@ const FormRef = () => {
     <>
       <div>FormRef</div>
       <form onSubmit={submitHandler}>
-        <label for="fname">First name:</label>
+        <label htmlFor="fname">First name:</label>
         <br />
         <input type="text" id="fname" ref={fnameRef} name="fname" />
         <br />
-        <label for="lname">Last name:</label>
+        <label htmlFor="lname">Last name:</label>
         <br />
         <input type="text" id="lname" ref={lnameRef} name="lname" />
         <br />

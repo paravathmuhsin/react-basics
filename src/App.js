@@ -14,6 +14,9 @@ import HOC from "./HOC";
 import FormState from "./FormState";
 import FormRef from "./FormRef";
 import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
+import Header from "./Header";
+import User from "./User";
+import Navigation from "./Navigation";
 
 // class App extends React.Component {
 //   render() {
@@ -26,12 +29,16 @@ const appRouters = createBrowserRouter([
     path: "/",
     element: (
       <>
-        <h2 style={{ backgroundColor: "blue" }}>Header</h2>
+        <Header />
         <Outlet />
       </>
     ),
     errorElement: <h2>404 - Not Found</h2>,
     children: [
+      {
+        index: true,
+        element: <LifeCycles />,
+      },
       {
         path: "form-state",
         element: <FormState />,
@@ -55,6 +62,15 @@ const appRouters = createBrowserRouter([
       {
         path: "ref",
         element: <UseRef />,
+      },
+      {
+        path: "user/:id",
+        element: <User />,
+      },
+
+      {
+        path: "nav",
+        element: <Navigation />,
       },
       {
         path: "*",
