@@ -1,28 +1,40 @@
-import React from "react";
-import FirstClass from "./FirstClass";
-import Second from "./Second";
-import StateClass from "./StateClass";
-import LifeCycles from "./LifeCycles";
-import Event from "./Event";
-import Ref from "./Ref";
-import Loop from "./Loop";
-import UseStateComp from "./UseStateComp";
-import UseEffectComp from "./UseEffectComp";
-import UseRef from "./UseRef";
-import TopLevel from "./TopLevel";
-import HOC from "./HOC";
-import FormState from "./FormState";
-import FormRef from "./FormRef";
+import React, { Suspense, lazy } from "react";
 import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
-import Header from "./Header";
-import User from "./User";
-import Navigation from "./Navigation";
+// import FirstClass from "./FirstClass";
+// import Second from "./Second";
+// import StateClass from "./StateClass";
+// import LifeCycles from "./LifeCycles";
+// import Event from "./Event";
+// import Ref from "./Ref";
+// import Loop from "./Loop";
+// import UseStateComp from "./UseStateComp";
+// import UseEffectComp from "./UseEffectComp";
+// import UseRef from "./UseRef";
+// import TopLevel from "./TopLevel";
+// import HOC from "./HOC";
+// import FormState from "./FormState";
+// import FormRef from "./FormRef";
+// import Header from "./Header";
+// import User from "./User";
+// import Navigation from "./Navigation";
 
 // class App extends React.Component {
 //   render() {
 //     return <h1>Hiii</h1>;
 //   }
 // }
+
+const Header = lazy(() => import("./Header"));
+const LifeCycles = lazy(() => import("./LifeCycles"));
+const FormRef = lazy(() => import("./FormRef"));
+const HOC = lazy(() => import("./HOC"));
+const UseEffectComp = lazy(() => import("./UseEffectComp"));
+const UseStateComp = lazy(() => import("./UseStateComp"));
+const UseRef = lazy(() => import("./UseRef"));
+const User = lazy(() => import("./User"));
+const Navigation = lazy(() => import("./Navigation"));
+const FormState = lazy(() => import("./FormState"));
+const HTTP = lazy(() => import("./HTTP"));
 
 const appRouters = createBrowserRouter([
   {
@@ -73,6 +85,10 @@ const appRouters = createBrowserRouter([
         element: <Navigation />,
       },
       {
+        path: "http",
+        element: <HTTP />,
+      },
+      {
         path: "*",
         element: <h2>404 - Not Found ---</h2>,
       },
@@ -88,7 +104,9 @@ function App() {
   };
   const link = "https://google.com";
   return (
-    <RouterProvider router={appRouters} />
+    <Suspense fallback={<h3>Loading...</h3>}>
+      <RouterProvider router={appRouters} />
+    </Suspense>
     // <div>
     //   <FormRef />
     //   {/* <FormState />

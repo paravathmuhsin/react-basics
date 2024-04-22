@@ -10,7 +10,7 @@ const Navigation = () => {
   return (
     <div>
       Navigation
-      {true ? <Navigate to={"/hoc"} /> : null}
+      {false ? <Navigate to={"/hoc"} /> : null}
       <button onClick={clickHandler}> redirect into hoc page</button>
     </div>
   );
