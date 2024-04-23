@@ -35,6 +35,7 @@ const User = lazy(() => import("./User"));
 const Navigation = lazy(() => import("./Navigation"));
 const FormState = lazy(() => import("./FormState"));
 const HTTP = lazy(() => import("./HTTP"));
+const PropTypeComp = lazy(() => import("./PropTypeComp"));
 
 const appRouters = createBrowserRouter([
   {
@@ -87,6 +88,10 @@ const appRouters = createBrowserRouter([
       {
         path: "http",
         element: <HTTP />,
+      },
+      {
+        path: "type",
+        element: <PropTypeComp fname={3} lname={8} />,
       },
       {
         path: "*",

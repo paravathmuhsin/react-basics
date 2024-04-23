@@ -86,6 +86,14 @@ const Header = () => {
             Http
           </NavLink>
         </li>
+        <li>
+          <NavLink
+            to="/type"
+            className={({ isActive }) => (isActive ? "active" : "")}
+          >
+            Prop Type
+          </NavLink>
+        </li>
       </ul>
     </div>
   );
