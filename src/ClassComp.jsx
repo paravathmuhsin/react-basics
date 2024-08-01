@@ -6,7 +6,7 @@ class ClassComp extends React.Component {
   }
   render() {
     // console.log(this.props);
-    return <h3>This is class component</h3>;
+    return <h3>This is my first class component</h3>;
   }
 }
 
