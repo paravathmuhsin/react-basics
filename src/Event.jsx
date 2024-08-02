@@ -1,4 +1,7 @@
-const Event = () => {
+import withHOC from "./withHOC";
+
+const Event = (props) => {
+  console.log(props);
   const eventHandler = (e) => {
     console.log(e);
   };
@@ -17,7 +20,7 @@ const Event = () => {
   );
 };
 
-export default Event;
+export default withHOC(Event);
 
 //react library
 // eventHandler(event)

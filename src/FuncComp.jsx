@@ -1,6 +1,6 @@
 const FuncComp = () => {
   const name = "function";
-  const ar = [8, "frrr", <p>ddddd</p>, <p>ssss</p>];
+  const ar = [8, "frrr"];
   const testFunc = () => {
     return "Hiii";
   };
