@@ -1,6 +1,7 @@
 import { Component, createRef } from "react";
 // import ClassComp from "./ClassComp";
 // import FuncComp from "./FuncComp";
+import ForwardRef from "./ForwardRef";
 
 export class Ref extends Component {
   paraRef = createRef();
@@ -13,7 +14,7 @@ export class Ref extends Component {
         Ref
         <p ref={this.paraRef}>This is ref added element</p>
         {/* <ClassComp ref={this.paraRef} /> */}
-        {/* <FuncComp ref={this.paraRef}/> */}
+        <ForwardRef ref={this.paraRef}/>
       </div>
     );
   }
