@@ -1,22 +1,21 @@
-import { useMemo, useState } from "react";
+import { useCallback, useState } from "react";
 import Memo from "./Memo";
 
-const UseMemo = () => {
+const UseCallback = () => {
   const [name, setName] = useState("David");
-  const test = useMemo(() => {
+  const test = useCallback(() => {
     return { message: name };
   }, [name]);
-  console.log(test);
   return (
     <div
       onClick={() => {
         setName("John");
       }}
     >
-      UseMemo - {name}
+      UseCallback - {name}
       <Memo test={test} />
     </div>
   );
 };
 
-export default UseMemo;
+export default UseCallback;
