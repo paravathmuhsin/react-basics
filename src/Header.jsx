@@ -1,4 +1,4 @@
-import { Link, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet } from "react-router-dom";
 import "./Header.css";
 
 const Header = () => {
@@ -6,13 +6,36 @@ const Header = () => {
     <>
       <ul className="Header">
         <li>
-          <Link to={"/"}>Home</Link>
+          <NavLink
+            className={({ isActive }) => (isActive ? "active" : "")}
+            to={"/"}
+          >
+            Home
+          </NavLink>
         </li>
         <li>
-          <Link to="/state">State</Link>
+          <NavLink
+            className={({ isActive }) => (isActive ? "active" : "")}
+            to="/state"
+          >
+            State
+          </NavLink>
         </li>
         <li>
-          <Link to="/effect">Effect</Link>
+          <NavLink
+            className={({ isActive }) => (isActive ? "active" : "")}
+            to="/effect"
+          >
+            Effect
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            className={({ isActive }) => (isActive ? "active" : "")}
+            to="/redirect"
+          >
+            Redirect
+          </NavLink>
         </li>
       </ul>
       <Outlet />

@@ -1,4 +1,7 @@
+import { useParams } from "react-router-dom";
+
 const FuncComp = () => {
+  const { slug } = useParams();
   const name = "function";
   const ar = [8, "frrr"];
   const testFunc = () => {
@@ -6,7 +9,7 @@ const FuncComp = () => {
   };
   return (
     <h3 className={name}>
-      This is {name} component - {testFunc()} -{ar}
+      This is {name} component - {slug} - {testFunc()} -{ar}
     </h3>
   );
 };

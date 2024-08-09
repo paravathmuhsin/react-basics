@@ -1,13 +1,17 @@
 .Header {
   margin: 0;
-  padding: 30px;
+  height: 50px;
 }
 .Header li {
   display: inline-block;
-  margin-right: 30px;
 }
 .Header li a {
   font-size: 20px;
   text-decoration: none;
   font-weight: bold;
+  padding: 15px;
+}
+
+.Header li a.active {
+  background-color: cadetblue;
 }
