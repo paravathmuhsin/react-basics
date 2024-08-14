@@ -37,6 +37,14 @@ const Header = () => {
             Redirect
           </NavLink>
         </li>
+        <li>
+          <NavLink
+            className={({ isActive }) => (isActive ? "active" : "")}
+            to="/http-request"
+          >
+            Http Request
+          </NavLink>
+        </li>
       </ul>
       <Outlet />
     </>

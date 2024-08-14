@@ -24,6 +24,7 @@ const UseEffect = lazy(() => import("./UseEffect"));
 const UseState = lazy(() => import("./UseState"));
 const Redirect = lazy(() => import("./Redirect"));
 const FuncComp = lazy(() => import("./FuncComp"));
+const HttpRequest = lazy(() => import("./HttpRequest"));
 
 const router = createBrowserRouter([
   {
@@ -50,6 +51,10 @@ const router = createBrowserRouter([
       {
         path: "wiki/:slug",
         element: <FuncComp />,
+      },
+      {
+        path: "http-request",
+        element: <HttpRequest />,
       },
     ],
   },
