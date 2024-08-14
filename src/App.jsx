@@ -1,4 +1,4 @@
-import { lazy, Suspense } from "react";
+import { createContext, lazy, Suspense, useContext } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
 // import ClassComp from "./ClassComp";
@@ -25,6 +25,7 @@ const UseState = lazy(() => import("./UseState"));
 const Redirect = lazy(() => import("./Redirect"));
 const FuncComp = lazy(() => import("./FuncComp"));
 const HttpRequest = lazy(() => import("./HttpRequest"));
+const Context = lazy(() => import("./Context"));
 
 const router = createBrowserRouter([
   {
@@ -56,6 +57,10 @@ const router = createBrowserRouter([
         path: "http-request",
         element: <HttpRequest />,
       },
+      {
+        path: "context",
+        element: <Context />,
+      },
     ],
   },
   // {
@@ -78,13 +83,17 @@ const router = createBrowserRouter([
   //   ],
   // },
 ]);
+const AppContext = createContext();
+export const useAppContext = () => useContext(AppContext);
 
 function App() {
   // const name = "John";
   return (
     <>
       <Suspense fallback={<h2>Loading...</h2>}>
-        <RouterProvider router={router} />
+        <AppContext.Provider value={{ name: "David" }}>
+          <RouterProvider router={router} />
+        </AppContext.Provider>
       </Suspense>
       {/* <UseCallback /> */}
       {/* <UseMemo /> */}
