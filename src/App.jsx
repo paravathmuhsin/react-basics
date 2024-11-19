@@ -1,5 +1,7 @@
 import ClassComp from "./ClassComp";
 import Event from "./Event";
+import { FormControlled } from "./FormControlled";
+import { FormUnControlled } from "./FormUnControlled";
 import Fragment from "./Fragment";
 import FuncComp from "./FuncComp";
 import JSX from "./JSX";
@@ -14,7 +16,9 @@ function App() {
   return (
     <div>
       <h1>Welcome to React</h1>
-      <UseRef />
+      <FormUnControlled />
+      {/* <FormControlled /> */}
+      {/* <UseRef /> */}
       {/* <Event /> */}
       {/* <UseEffect /> */}
       {/* <UseState /> */}
