@@ -1,4 +1,4 @@
-import { Link, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -6,13 +6,36 @@ const Header = () => {
       <h3 style={{ backgroundColor: "blue" }}>Blue header</h3>
       <ul>
         <li>
-          <Link to="/">Home</Link>
+          <NavLink
+            className={({ isActive }) => (isActive ? "active" : "")}
+            to="/"
+          >
+            Home
+          </NavLink>
         </li>
         <li>
-          <Link to="/style">Style</Link>
+          <NavLink
+            className={({ isActive }) => (isActive ? "active" : "")}
+            to="/style"
+          >
+            Style
+          </NavLink>
         </li>
         <li>
-          <Link to="/event">Event</Link>
+          <NavLink
+            className={({ isActive }) => (isActive ? "active" : "")}
+            to="/event"
+          >
+            Event
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            className={({ isActive }) => (isActive ? "active" : "")}
+            to="/navigation"
+          >
+            Navigation
+          </NavLink>
         </li>
       </ul>
       <Outlet />

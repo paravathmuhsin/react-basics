@@ -1,26 +1,47 @@
-import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
-import ClassComp from "./ClassComp";
-import ConditionalRender from "./ConditionalRender";
-import Event from "./Event";
-import { FormControlled } from "./FormControlled";
-import { FormUnControlled } from "./FormUnControlled";
-import Fragment from "./Fragment";
-import FuncComp from "./FuncComp";
-import JSX from "./JSX";
-import LifeCycle from "./LifeCycle";
-import List from "./List";
-import Props from "./Props";
-import State from "./State";
-import Styling from "./Styling";
-import UseEffect from "./UseEffect";
-import UseRef from "./UseRef";
-import UseState from "./UseState";
-import Header from "./Header";
+import { lazy, Suspense } from "react";
+import {
+  createBrowserRouter,
+  Link,
+  Outlet,
+  RouterProvider,
+} from "react-router-dom";
+// import ClassComp from "./ClassComp";
+// import ConditionalRender from "./ConditionalRender";
+// import Event from "./Event";
+// import { FormControlled } from "./FormControlled";
+// import { FormUnControlled } from "./FormUnControlled";
+// import Fragment from "./Fragment";
+// import FuncComp from "./FuncComp";
+// import JSX from "./JSX";
+// import LifeCycle from "./LifeCycle";
+// import List from "./List";
+// import Props from "./Props";
+// import State from "./State";
+// import Styling from "./Styling";
+// import UseEffect from "./UseEffect";
+// import UseRef from "./UseRef";
+// import UseState from "./UseState";
+// import Header from "./Header";
+// import ProductDetails from "./ProductDetails";
+// import DynamicNavigation from "./DynamicNavigation";
+
+const Header = lazy(() => import("./Header.jsx"));
+const Props = lazy(() => import("./Props.jsx"));
+const Styling = lazy(() => import("./Styling.jsx"));
+const DynamicNavigation = lazy(() => import("./DynamicNavigation.jsx"));
+const UseRef = lazy(() => import("./UseRef.jsx"));
+const UseState = lazy(() => import("./UseState.jsx"));
+const UseEffect = lazy(() => import("./UseEffect.jsx"));
+const LifeCycle = lazy(() => import("./LifeCycle.jsx"));
+const JSX = lazy(() => import("./JSX.jsx"));
+const ProductDetails = lazy(() => import("./ProductDetails.jsx"));
+const Event = lazy(() => import("./Event.jsx"));
 
 const appRouters = createBrowserRouter([
   {
     path: "/",
     element: <Header />,
+    errorElement: <h3>404 - not found</h3>,
     children: [
       {
         index: true,
@@ -33,6 +54,10 @@ const appRouters = createBrowserRouter([
       {
         path: "event",
         element: <Event />,
+      },
+      {
+        path: "navigation",
+        element: <DynamicNavigation />,
       },
     ],
   },
@@ -72,11 +97,38 @@ const appRouters = createBrowserRouter([
     path: "/jsx",
     element: <JSX />,
   },
+  {
+    path: "/products",
+    element: (
+      <>
+        <h3>Product urls</h3>
+        <Outlet />
+      </>
+    ),
+    children: [
+      {
+        index: true,
+        element: (
+          <div>
+            <Link to="/products/mobile">Mobile</Link>
+            <br />
+            <Link to="/products/tv">TV</Link>
+          </div>
+        ),
+      },
+      {
+        path: ":slug",
+        element: <ProductDetails />,
+      },
+    ],
+  },
 ]);
 
 function App() {
   return (
-    <RouterProvider router={appRouters} />
+    <Suspense fallback={<h2>Loading....</h2>}>
+      <RouterProvider router={appRouters} />
+    </Suspense>
     // <div>
     //   {/* <h1>Welcome to React</h1> */}
     //   {/* <Styling />
