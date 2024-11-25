@@ -37,6 +37,14 @@ const Header = () => {
             Navigation
           </NavLink>
         </li>
+        <li>
+          <NavLink
+            className={({ isActive }) => (isActive ? "active" : "")}
+            to="/fetch"
+          >
+            Fetch
+          </NavLink>
+        </li>
       </ul>
       <Outlet />
     </>

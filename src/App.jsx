@@ -36,6 +36,7 @@ const LifeCycle = lazy(() => import("./LifeCycle.jsx"));
 const JSX = lazy(() => import("./JSX.jsx"));
 const ProductDetails = lazy(() => import("./ProductDetails.jsx"));
 const Event = lazy(() => import("./Event.jsx"));
+const Fetch = lazy(() => import("./Fetch.jsx"));
 
 const appRouters = createBrowserRouter([
   {
@@ -58,6 +59,10 @@ const appRouters = createBrowserRouter([
       {
         path: "navigation",
         element: <DynamicNavigation />,
+      },
+      {
+        path: "fetch",
+        element: <Fetch />,
       },
     ],
   },
