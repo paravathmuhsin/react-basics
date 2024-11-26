@@ -1,10 +1,11 @@
 import { Link, NavLink, Outlet } from "react-router-dom";
+import classes from "./Header.module.css";
 
 const Header = () => {
   return (
     <>
       <h3 style={{ backgroundColor: "blue" }}>Blue header</h3>
-      <ul>
+      <ul className={classes.header}>
         <li>
           <NavLink
             className={({ isActive }) => (isActive ? "active" : "")}
@@ -43,6 +44,30 @@ const Header = () => {
             to="/fetch"
           >
             Fetch
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            className={({ isActive }) => (isActive ? "active" : "")}
+            to="/effect"
+          >
+            Life cycle
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            className={({ isActive }) => (isActive ? "active" : "")}
+            to="/async-await"
+          >
+            Async/Await
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            className={({ isActive }) => (isActive ? "active" : "")}
+            to="/memo"
+          >
+            Memo
           </NavLink>
         </li>
       </ul>

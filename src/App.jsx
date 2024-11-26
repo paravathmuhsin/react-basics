@@ -37,6 +37,8 @@ const JSX = lazy(() => import("./JSX.jsx"));
 const ProductDetails = lazy(() => import("./ProductDetails.jsx"));
 const Event = lazy(() => import("./Event.jsx"));
 const Fetch = lazy(() => import("./Fetch.jsx"));
+const AsyncAwait = lazy(() => import("./Await.jsx"));
+const Memo = lazy(() => import("./TestMemo.jsx"));
 
 const appRouters = createBrowserRouter([
   {
@@ -63,6 +65,18 @@ const appRouters = createBrowserRouter([
       {
         path: "fetch",
         element: <Fetch />,
+      },
+      {
+        path: "effect",
+        element: <UseEffect />,
+      },
+      {
+        path: "async-await",
+        element: <AsyncAwait />,
+      },
+      {
+        path: "memo",
+        element: <Memo />,
       },
     ],
   },
