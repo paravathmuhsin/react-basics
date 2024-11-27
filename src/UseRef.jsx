@@ -1,18 +1,18 @@
 import { useEffect, useRef } from "react";
 import ClassComp from "./ClassComp";
-import FuncComp from "./FuncComp";
+import ForwardRefComp from "./ForwardRefComp";
 
 const UseRef = () => {
   const paraRef = useRef();
   useEffect(() => {
-    console.log(paraRef.current);
+    console.log(paraRef);
   });
   return (
     <div>
       UseRef
-      <p ref={paraRef}>Hii</p>
-      {/* <ClassComp ref={paraRef} /> */}
-      {/* <FuncComp ref={paraRef} /> */}
+      {/* <p ref={paraRef}>Hii</p>
+      <ClassComp ref={paraRef} /> */}
+      <ForwardRefComp ref={paraRef} />
     </div>
   );
 };
