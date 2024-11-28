@@ -70,6 +70,14 @@ const Header = () => {
             Memo
           </NavLink>
         </li>
+        <li>
+          <NavLink
+            className={({ isActive }) => (isActive ? "active" : "")}
+            to="/context"
+          >
+            Context
+          </NavLink>
+        </li>
       </ul>
       <Outlet />
     </>

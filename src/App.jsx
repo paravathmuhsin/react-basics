@@ -1,4 +1,4 @@
-import { lazy, Suspense } from "react";
+import { createContext, lazy, Suspense, useContext } from "react";
 import {
   createBrowserRouter,
   Link,
@@ -39,6 +39,7 @@ const Event = lazy(() => import("./Event.jsx"));
 const Fetch = lazy(() => import("./Fetch.jsx"));
 const AsyncAwait = lazy(() => import("./Await.jsx"));
 const Memo = lazy(() => import("./TestMemo.jsx"));
+const UseContext = lazy(() => import("./UseContext.jsx"));
 
 const appRouters = createBrowserRouter([
   {
@@ -53,6 +54,10 @@ const appRouters = createBrowserRouter([
       {
         path: "style",
         element: <Styling />,
+      },
+      {
+        path: "context",
+        element: <UseContext />,
       },
       {
         path: "event",
@@ -143,10 +148,18 @@ const appRouters = createBrowserRouter([
   },
 ]);
 
+// create context
+const AppContext = createContext(null);
+
+export const useAppContext = () => useContext(AppContext);
+
 function App() {
   return (
     <Suspense fallback={<h2>Loading....</h2>}>
-      <RouterProvider router={appRouters} />
+      {/* provide the context value */}
+      <AppContext.Provider value={{ appTitle: "Welcome" }}>
+        <RouterProvider router={appRouters} />
+      </AppContext.Provider>
     </Suspense>
     // <div>
     //   {/* <h1>Welcome to React</h1> */}
