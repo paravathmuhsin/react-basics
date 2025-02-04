@@ -2,7 +2,9 @@ const Props = ({ name, age, children }) => {
   console.log(children);
   return (
     <div>
-      Props {children} {name}@{age}
+      Props {name}@{age}
+      {/* {children ? <p>{children}</p> : null} */}
+      {children && <p>{children}</p>}
     </div>
   );
 };
