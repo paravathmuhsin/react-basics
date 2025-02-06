@@ -7,14 +7,16 @@ import LifeCycle from "./LifeCycle";
 import Props from "./Props";
 import State from "./State";
 import UseEffect from "./UseEffect";
+import UseRef from "./UseRef";
 import UseState from "./UseState";
 function App() {
   const name = "David";
   return (
     <div>
       <h1>Welcome to my first React app</h1>
-      <UseEffect />
-      {/* <UseState />
+      <UseRef />
+      {/* <UseEffect />
+      <UseState />
       <LifeCycle />
       <State />
       <Props name={name} age="55">

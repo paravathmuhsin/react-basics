@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import LifeCycle from "./LifeCycle";
 
 const UseEffect = () => {
   const [state, setState] = useState("David");
@@ -22,6 +23,7 @@ const UseEffect = () => {
   return (
     <div>
       UseEffect - {state} <button onClick={clickHandler}>Update state</button>
+      {state === "David" && <LifeCycle />}
     </div>
   );
 };
