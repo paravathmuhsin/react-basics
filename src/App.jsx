@@ -8,6 +8,7 @@ import FragmentComp from "./FragmentComp";
 import FuncComp from "./FuncComp";
 import JSX from "./JSX";
 import LifeCycle from "./LifeCycle";
+import Loop from "./Loop";
 import Props from "./Props";
 import State from "./State";
 import UseEffect from "./UseEffect";
@@ -18,7 +19,8 @@ function App() {
   return (
     <div>
       <h1>Welcome to my first React app</h1>
-      <FormGeneral />
+      <Loop />
+      {/* <FormGeneral /> */}
       {/* <FormUncontrolled />
       <FormControlled /> */}
       {/* <Events /> */}
