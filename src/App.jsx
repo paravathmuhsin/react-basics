@@ -1,3 +1,4 @@
+import Style from "./Style";
 import "./App.css";
 import ClassComp from "./ClassComp";
 import Events from "./Events";
@@ -19,9 +20,10 @@ function App() {
   return (
     <div>
       <h1>Welcome to my first React app</h1>
-      <Loop />
-      {/* <FormGeneral /> */}
-      {/* <FormUncontrolled />
+      <Style />
+      {/* <Loop />
+      <FormGeneral />
+      <FormUncontrolled />
       <FormControlled /> */}
       {/* <Events /> */}
       {/* <UseRef /> */}
