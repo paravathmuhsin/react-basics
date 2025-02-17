@@ -1,0 +1,64 @@
+import { Link, NavLink, Outlet } from "react-router";
+import "./Header.scss";
+
+const Header = () => {
+  return (
+    <div>
+      <nav className={"appNav"}>
+        {/* <Link className={classes.NavLink} to="/">
+          Home
+        </Link>
+        <Link className={classes.NavLink} to="/jsx">
+          JSX
+        </Link>
+        <Link className={classes.NavLink} to="/users/44">
+          User 44
+        </Link>
+        <Link className={classes.NavLink} to="/form">
+          Form general
+        </Link>
+        <Link to="/form/controller">Form controlled</Link> */}
+        {/* <Link to="/form/uncontroller">Form uncontrolled</Link> */}
+        <NavLink
+          className={({ isActive }) => (isActive ? "active" : "")}
+          to="/"
+        >
+          Home
+        </NavLink>
+        <NavLink
+          className={({ isActive }) => (isActive ? "active" : "")}
+          to="/jsx"
+        >
+          JSX
+        </NavLink>
+        <NavLink
+          className={({ isActive }) => (isActive ? "active" : "")}
+          to="/form/controller"
+        >
+          Form controlled
+        </NavLink>
+        <NavLink
+          className={({ isActive }) => (isActive ? "active" : "")}
+          to="/form/uncontroller"
+        >
+          Form uncontrolled
+        </NavLink>
+        <NavLink
+          className={({ isActive }) => (isActive ? "active" : "")}
+          to="/form"
+        >
+          Form
+        </NavLink>
+        <NavLink
+          className={({ isActive }) => (isActive ? "active" : "")}
+          to="/users/44"
+        >
+          User 44
+        </NavLink>
+      </nav>
+      <Outlet />
+    </div>
+  );
+};
+
+export default Header;
