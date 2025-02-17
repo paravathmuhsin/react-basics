@@ -1,6 +1,7 @@
 import "./App.css";
 import AppBrowserRouter from "./AppBrowserRouter";
 import AppRouter from "./AppRouter";
+import AppContext from "./AppContext";
 // import Style from "./Style";
 // import ClassComp from "./ClassComp";
 // import Events from "./Events";
@@ -20,7 +21,11 @@ import AppRouter from "./AppRouter";
 // import AppRouter from "./AppRouter";
 
 function App() {
-  return <AppBrowserRouter />;
+  return (
+    <AppContext>
+      <AppBrowserRouter />
+    </AppContext>
+  );
   // return <AppRouter />
   // const name = "David";
   // return (

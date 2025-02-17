@@ -1,9 +1,14 @@
 import { Link, NavLink, Outlet } from "react-router";
 import "./Header.scss";
+import { useAppContext } from "./AppContext";
 
 const Header = () => {
+  const { theme, setTheme } = useAppContext();
+  const switchTheme = () => {
+    setTheme((state) => (state === "light" ? "dark" : "light"));
+  };
   return (
-    <div>
+    <div className={theme === "light" ? "" : "dark"}>
       <nav className={"appNav"}>
         {/* <Link className={classes.NavLink} to="/">
           Home
@@ -55,6 +60,13 @@ const Header = () => {
         >
           User 44
         </NavLink>
+        <NavLink
+          className={({ isActive }) => (isActive ? "active" : "")}
+          to="/context"
+        >
+          Context
+        </NavLink>
+        <button onClick={switchTheme}>{theme}</button>
       </nav>
       <Outlet />
     </div>

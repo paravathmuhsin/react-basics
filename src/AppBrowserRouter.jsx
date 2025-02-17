@@ -7,6 +7,7 @@ import FormUncontrolled from "./FormUncontrolled";
 import FormGeneral from "./FormGeneral";
 import DynamicRouting from "./DynamicRouting";
 import Header from "./Header";
+import UseContext from "./UseContext";
 
 const AppBrowserRouter = () => {
   return (
@@ -22,6 +23,7 @@ const AppBrowserRouter = () => {
             <Route path="uncontroller" element={<FormUncontrolled />} />
           </Route>
           <Route path="users/:id" element={<DynamicRouting />} />
+          <Route path="context" element={<UseContext />} />
 
           <Route path="*" element={<h2>404- Not found</h2>} />
         </Route>
