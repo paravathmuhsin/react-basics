@@ -8,6 +8,7 @@ import FormGeneral from "./FormGeneral";
 import DynamicRouting from "./DynamicRouting";
 import Header from "./Header";
 import UseContext from "./UseContext";
+import API from "./API";
 
 const AppBrowserRouter = () => {
   return (
@@ -24,6 +25,7 @@ const AppBrowserRouter = () => {
           </Route>
           <Route path="users/:id" element={<DynamicRouting />} />
           <Route path="context" element={<UseContext />} />
+          <Route path="api" element={<API />} />
 
           <Route path="*" element={<h2>404- Not found</h2>} />
         </Route>

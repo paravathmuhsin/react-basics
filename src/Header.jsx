@@ -66,6 +66,12 @@ const Header = () => {
         >
           Context
         </NavLink>
+        <NavLink
+          className={({ isActive }) => (isActive ? "active" : "")}
+          to="/api"
+        >
+          API
+        </NavLink>
         <button onClick={switchTheme}>{theme}</button>
       </nav>
       <Outlet />
