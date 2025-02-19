@@ -72,6 +72,19 @@ const Header = () => {
         >
           API
         </NavLink>
+
+        <NavLink
+          className={({ isActive }) => (isActive ? "active" : "")}
+          to="/counter"
+        >
+          Counter
+        </NavLink>
+        <NavLink
+          className={({ isActive }) => (isActive ? "active" : "")}
+          to="/memo"
+        >
+          Memo
+        </NavLink>
         <button onClick={switchTheme}>{theme}</button>
       </nav>
       <Outlet />

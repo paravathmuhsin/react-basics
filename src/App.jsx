@@ -2,6 +2,7 @@ import "./App.css";
 import AppBrowserRouter from "./AppBrowserRouter";
 import AppRouter from "./AppRouter";
 import AppContext from "./AppContext";
+import ErrorBoundry from "./ErrorBoundry";
 // import Style from "./Style";
 // import ClassComp from "./ClassComp";
 // import Events from "./Events";
@@ -22,9 +23,11 @@ import AppContext from "./AppContext";
 
 function App() {
   return (
-    <AppContext>
-      <AppBrowserRouter />
-    </AppContext>
+    <ErrorBoundry>
+      <AppContext>
+        <AppBrowserRouter />
+      </AppContext>
+    </ErrorBoundry>
   );
   // return <AppRouter />
   // const name = "David";
