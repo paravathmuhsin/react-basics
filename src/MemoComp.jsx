@@ -1,7 +1,7 @@
 import { memo } from "react";
 
-const MemoComp = () => {
-  console.log("rendred");
+const MemoComp = ({ test }) => {
+  console.log("rendred", test);
   return <div>MemoComp</div>;
 };
 

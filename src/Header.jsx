@@ -51,6 +51,7 @@ const Header = () => {
         <NavLink
           className={({ isActive }) => (isActive ? "active" : "")}
           to="/form"
+          end
         >
           Form
         </NavLink>
